@@ -1,0 +1,52 @@
+<html >
+
+
+<header id="navbar">
+  
+  <div >
+    <img id="slika" src="assets/slika2.jpg" />
+   
+
+    <ul id="lista">
+      <li>
+        <button id="btn1"
+          class="btn btn-light btn-lg"
+          data-toggle="modal"
+          data-target="#registerModal"
+          routerLink="register"
+        >
+          Register
+        </button>
+      </li>
+      <li>
+        <button id="btn2"
+          class="btn btn-dark btn-lg"
+          data-toggle="modal"
+          data-target="#loginModal"
+          routerLink="login"
+        >
+          Login
+        </button>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<body class="box">
+  
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <h1 id="naslov">ELEKTRODISTRIBUCIJA</h1>
+  <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+  <br/>
+  
+  <div >
+    <router-outlet></router-outlet>
+    
+  </div>
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,97 @@
+#navbar{
+    background-color:royalblue;
+}
+#slika {
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
+li {
+    float:right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0px 10px;
+    text-decoration: none;
+    background-color:royalblue;
+  }
+  
+  #btn1{
+    display: inline-block;
+    padding: 15px 45px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    width: 200px;
+    
+      
+  }
+
+#btn1:hover {background-color: #3e8e41}
+
+#btn1:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+    
+
+  #btn2{
+    display: inline-block;
+    padding: 15px 45px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    width: 200px;
+    
+      
+  }
+
+#btn2:hover {background-color: #3e8e41}
+
+#btn2:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+ 
+ 
+
+#lista {
+    
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color:royalblue;
+  }
+
+  #naslov{
+    text-align: center;
+    color: orange;
+}
+  
+  .box{
+    background-image: url("src/assets/slika3.jpg");
+    background-size: cover;
+   
+    background-repeat: repeat;
+    
+}
+
+  
