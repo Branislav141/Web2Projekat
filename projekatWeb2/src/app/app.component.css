@@ -3,8 +3,8 @@
 }
 #slika {
     float: left;
-    height: 50px;
-    width: 50px;
+    height: 71px;
+    width: 71px;
 }
 
 li {
@@ -12,66 +12,50 @@ li {
     display: block;
     color: white;
     text-align: center;
-    padding: 0px 10px;
+    padding: 10px 10px;
     text-decoration: none;
     background-color:royalblue;
+    
+  }
+  .button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
   }
   
-  #btn1{
-    display: inline-block;
-    padding: 15px 45px;
-    font-size: 16px;
+  .button span {
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    width: 200px;
-    
-      
-  }
-
-#btn1:hover {background-color: #3e8e41}
-
-#btn1:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
-    
-
-  #btn2{
     display: inline-block;
-    padding: 15px 45px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    width: 200px;
-    
-      
+    position: relative;
+    transition: 0.5s;
   }
-
-#btn2:hover {background-color: #3e8e41}
-
-#btn2:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
   }
  
- 
-
 #lista {
     
     list-style-type: none;
@@ -79,11 +63,13 @@ li {
     padding: 0;
     overflow: hidden;
     background-color:royalblue;
+   
   }
 
   #naslov{
     text-align: center;
     color: orange;
+    font-size: 36px;
 }
   
   .box{
