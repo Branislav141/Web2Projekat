@@ -1,10 +1,54 @@
 <html>
    
 
-<body >
+  <header id="navbar">
+  
+    <div >
+      <img id="slika" src="assets/slika2.jpg" />
+     
+  
+      <ul id="lista">
+        <li>
+          <button class="button" 
+            
+            routerLink="register"
+          ><span> Register</span>
+           
+          </button>
+        </li>
+        <li>
+          <button class="button"
+          
+          routerLink="/"
+          ><span>Login</span>
+            
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <body class="box" >
+    <br/>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <br/>
+    <h1 id="naslov">ELEKTRODISTRIBUCIJA</h1>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+    <br/>
+    <br/>
+    <br/>
     
-<div>
-    <app-login></app-login>
-  </div>
-</body>
+    <button style="margin-left: 50px;" class="button"
+          
+    routerLink="default"
+    ><span>DASHBOARD PAGE</span>
+      
+    </button>
+    
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </body>
+  
+  
 </html>
