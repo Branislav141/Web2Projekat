@@ -12,12 +12,14 @@ import {MatCardModule} from '@angular/material/card';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatIconModule} from '@angular/material/icon'
+import { MyIncidentsComponent } from 'src/app/modules/my-incidents/my-incidents.component';
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent
+    PostsComponent,
+    MyIncidentsComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import {MatTableModule} from '@angular/material/table';
     FlexLayoutModule,
     MatCardModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule
   ],
   providers:[
     DashboardService

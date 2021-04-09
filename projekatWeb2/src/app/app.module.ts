@@ -8,8 +8,6 @@ import { PocetnaStranicaComponent } from './components/pocetna-stranica/pocetna-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { RegisterComponent } from './components/register/register.component';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { PostsComponent } from './modules/posts/posts.component';
 
 @NgModule({
   declarations: [

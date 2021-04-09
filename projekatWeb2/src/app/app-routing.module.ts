@@ -5,6 +5,7 @@ import { PocetnaStranicaComponent } from './components/pocetna-stranica/pocetna-
 import { RegisterComponent } from './components/register/register.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { MyIncidentsComponent } from './modules/my-incidents/my-incidents.component';
 import { PostsComponent } from './modules/posts/posts.component';
 
 
@@ -32,7 +33,12 @@ const routes: Routes = [
   }, {
     path:'posts',
     component:PostsComponent
-    }]},
+    },
+    {
+      path:'myIncidents',
+    component:MyIncidentsComponent
+    }
+  ]},
   
 
 
