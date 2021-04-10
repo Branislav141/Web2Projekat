@@ -1,9 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
    
-    <a routerLink="/default/newIncidents"><button class="btn"><mat-icon>add</mat-icon>New</button></a>
+    <a routerLink="/default/newIncidents"><button class="btn"><mat-icon>Add</mat-icon>New</button></a>
     
-    <button class="btn">All</button>
-    <button class="btn">Mine</button>
+
     <button class="btn"><span class="material-icons">
         filter_alt
         </span>Filter</button>
@@ -13,7 +12,7 @@
 
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
-    <div fxFlex="60">
+    <div fxFlex="100">
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSource">
 

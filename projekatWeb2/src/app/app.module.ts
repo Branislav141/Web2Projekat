@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
     PocetnaStranicaComponent,
     LoginComponent,
     RegisterComponent,
+   
  
   ],
   imports: [

@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { MyIncidentsComponent } from './modules/my-incidents/my-incidents.component';
+import { NewIncidentComponent } from './modules/new-incident/new-incident.component';
 import { PostsComponent } from './modules/posts/posts.component';
 
 
@@ -37,6 +38,10 @@ const routes: Routes = [
     {
       path:'myIncidents',
     component:MyIncidentsComponent
+    },
+    {
+      path:'newIncidents',
+    component:NewIncidentComponent
     }
   ]},
   
