@@ -1,24 +1,53 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+<div class="container">
+    <div class="row">
+    <div class="col-md-3">
+      <div 
+      class="card-counter danger">
+       <a routerLink="/default/myIncidents"><i class="fa fa-exclamation-triangle"></i></a> 
+        <span class="count-name">MY INCIDENTS </span>
+       
+      </div>
+    </div>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <mat-card fxFlex="25">
-        <p>MY INCIDENTS <a routerLink="/default/myIncidents"><mat-icon>warning</mat-icon></a></p>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <p>MY WORK PLANS<a routerLink="/"><mat-icon>warning</mat-icon></a></p>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <p>MY SAFETY DOCS<a routerLink="/"><mat-icon>warning</mat-icon></a></p>
-    </mat-card>
+    <div class="col-md-3">
+      <div class="card-counter primary">
+        <i class="fa fa-book"></i>
+        
+        <span class="count-name">MY WORK PLANS</span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card-counter success">
+        <i class="fa fa-shield"></i>
+        
+        <span class="count-name">MY SAFETY DOCS</span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card-counter info">
+        <i class="fa fa-wrench"></i>
+      
+        <span class="count-name">WORK REQUESTS</span>
+      </div>
+    </div>
+  </div>
 </div>
-
-
+<br>
 <br>
 
 <mat-divider></mat-divider>
 
 <br>
-
+<br>
+<br>
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
     <div fxFlex="60">
         <app-widget-area [data]="bigChart"></app-widget-area>
