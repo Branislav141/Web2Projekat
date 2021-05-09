@@ -1,7 +1,4 @@
-#naslov{
-    text-align: center;
-    color: orange;
-}
+
 
 #formaregister{
     
@@ -9,6 +6,7 @@
     background-color: #f2f2f2;
     padding: 20px;
     width: 500px;
+    
 }
 
 
@@ -44,4 +42,91 @@ input[type=text], select {
   
   input[type=submit]:hover {
     background-color: #45a049;
+  }
+
+  body{
+    background-image: url("src/assets/slika4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+  }
+
+  #navbar{
+    background-color:royalblue;
+    
+}
+#slika {
+    float: left;
+    height: 71px;
+    width: 71px;
+}
+
+li {
+    float:right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    background-color:royalblue;
+    
+  }
+  .button {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+ 
+#lista {
+    
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color:royalblue;
+   
+  }
+
+  #naslov{
+    text-align: center;
+    color: orange;
+    font-size: 36px;
+}
+.container{
+  height: 100%;
+  align-content: center;
   }

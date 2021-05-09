@@ -5,9 +5,12 @@ import { PocetnaStranicaComponent } from './components/pocetna-stranica/pocetna-
 import { RegisterComponent } from './components/register/register.component';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { CallsComponent } from './modules/incidentposts/calls/calls.component';
 import { MyIncidentsComponent } from './modules/my-incidents/my-incidents.component';
 import { NewIncidentComponent } from './modules/new-incident/new-incident.component';
+import { NewsafetydocumentComponent } from './modules/newsafetydocument/newsafetydocument.component';
 import { PostsComponent } from './modules/posts/posts.component';
+import { SafetydocumentsComponent } from './modules/safetydocuments/safetydocuments.component';
 
 
 const routes: Routes = [
@@ -16,14 +19,11 @@ const routes: Routes = [
 {
   path:'',
   component:PocetnaStranicaComponent,
-  children:[{
-    path:'',
-    component:LoginComponent
-}, {
+},
+{
   path:'register',
-  component:RegisterComponent
-  }]},
-
+  component:RegisterComponent,
+},
 
   {
     path:'default',
@@ -36,13 +36,25 @@ const routes: Routes = [
     component:PostsComponent
     },
     {
+      path:'calls',
+      component:CallsComponent
+      },
+    {
       path:'myIncidents',
     component:MyIncidentsComponent
     },
     {
       path:'newIncidents',
     component:NewIncidentComponent
-    }
+    },
+    {
+      path:'safety',
+    component:SafetydocumentsComponent
+    },
+    {
+      path:'newsafetydoc',
+    component:NewsafetydocumentComponent
+    },
   ]},
   
 

@@ -16,6 +16,9 @@ import { RegisterComponent } from './components/register/register.component';
     LoginComponent,
     RegisterComponent,
    
+   
+  
+    
  
   ],
   imports: [

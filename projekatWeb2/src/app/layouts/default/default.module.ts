@@ -23,6 +23,15 @@ import { DevicesComponent } from 'src/app/modules/incidentposts/devices/devices.
 import { ResolutionComponent } from 'src/app/modules/incidentposts/resolution/resolution.component';
 import { CallsComponent } from 'src/app/modules/incidentposts/calls/calls.component';
 import {MatSelectModule} from '@angular/material/select';
+import { AgmCoreModule } from '@agm/core';
+import { MatSortModule } from '@angular/material/sort';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SafetydocumentsComponent } from 'src/app/modules/safetydocuments/safetydocuments.component';
+import { HistoryComponent } from 'src/app/modules/safetycompinf/history/history.component';
+import { MultimediaComponent } from 'src/app/modules/safetycompinf/multimedia/multimedia.component';
+import { InstructionsComponent } from 'src/app/modules/safetycompinf/instructions/instructions.component';
+import { NewsafetydocumentComponent } from 'src/app/modules/newsafetydocument/newsafetydocument.component';
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -34,6 +43,13 @@ import {MatSelectModule} from '@angular/material/select';
     DevicesComponent,
     ResolutionComponent,
     CallsComponent,
+    SafetydocumentsComponent,
+    BasicInformationComponent,
+    HistoryComponent,
+    MultimediaComponent,
+    InstructionsComponent,
+    NewsafetydocumentComponent
+   
   ],
   imports: [
     CommonModule,
@@ -49,9 +65,15 @@ import {MatSelectModule} from '@angular/material/select';
     MatListModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSortModule,
+    NgxPaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBGogLjzAuxXfkXYupVuzPfWklpTU2lBIE'
+    })
    
   ],
+  
   providers:[
     DashboardService
   ]
