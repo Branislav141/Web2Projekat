@@ -31,6 +31,8 @@ import { HistoryComponent } from 'src/app/modules/safetycompinf/history/history.
 import { MultimediaComponent } from 'src/app/modules/safetycompinf/multimedia/multimedia.component';
 import { InstructionsComponent } from 'src/app/modules/safetycompinf/instructions/instructions.component';
 import { NewsafetydocumentComponent } from 'src/app/modules/newsafetydocument/newsafetydocument.component';
+import { BscinformationComponent } from 'src/app/modules/safetycompinf/bscinformation/bscinformation.component';
+import { ChecklistComponent } from 'src/app/modules/safetycompinf/checklist/checklist.component';
 
 @NgModule({
   declarations: [
@@ -44,11 +46,12 @@ import { NewsafetydocumentComponent } from 'src/app/modules/newsafetydocument/ne
     ResolutionComponent,
     CallsComponent,
     SafetydocumentsComponent,
-    BasicInformationComponent,
+    BscinformationComponent,
     HistoryComponent,
     MultimediaComponent,
     InstructionsComponent,
-    NewsafetydocumentComponent
+    NewsafetydocumentComponent,
+    ChecklistComponent,
    
   ],
   imports: [

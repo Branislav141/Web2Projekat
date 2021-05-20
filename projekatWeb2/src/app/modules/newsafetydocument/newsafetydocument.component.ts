@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsafetydocumentComponent implements OnInit {
 
+  showMe:boolean=true;
+  showMe5:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleBasic(){
+    this.showMe=true;
+    this.showMe5=false;
+  }
+
+  toggleChecklist(){
+    this.showMe5=true;
+    this.showMe=false;
+  }
 }

@@ -17,25 +17,25 @@ export class NewIncidentComponent implements OnInit {
   }
 
   toggleBasic(){
-    this.showMe=!this.showMe;
+    this.showMe=true;
     this.showMe1=false;
     this.showMe2=false;
     this.showMe3=false;
   }
   toggleDevices(){
-    this.showMe1=!this.showMe1;
+    this.showMe1=true;
     this.showMe=false;
     this.showMe2=false;
     this.showMe3=false;
   }
   toggleResolution(){
-    this.showMe2=!this.showMe2;
+    this.showMe2=true;
     this.showMe=false;
     this.showMe1=false;
     this.showMe3=false;
   }
   toggleCalls(){
-    this.showMe3=!this.showMe3;
+    this.showMe3=true;
     this.showMe=false;
     this.showMe1=false;
     this.showMe2=false;
