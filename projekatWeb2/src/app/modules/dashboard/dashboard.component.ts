@@ -16,8 +16,4 @@ export class DashboardComponent implements OnInit {
     this.bigChart = this.dashboardService.bigChart();
     this.pieChart = this.dashboardService.pieChart();
   }
-
-  openWorkRequests() {
-
-  }
 }

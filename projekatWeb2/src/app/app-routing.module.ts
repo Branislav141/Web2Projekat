@@ -13,6 +13,7 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { SafetydocumentsComponent } from './modules/safetydocuments/safetydocuments.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { WorkRequestsComponent } from './modules/work-requests/work-requests.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
       {
         path: 'newsafetydoc',
         component: NewsafetydocumentComponent,
+      },
+      {
+        path: 'work-requests',
+        component: WorkRequestsComponent,
       },
     ],
   },
