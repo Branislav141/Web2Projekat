@@ -18,6 +18,8 @@ import { BasicInformationComponent } from './modules/work-requests/new-request/b
 import { ChangeHistoryComponent } from './modules/work-requests/new-request/change-history/change-history.component';
 import { MultimediaAttachmentsComponent } from './modules/work-requests/new-request/multimedia-attachments/multimedia-attachments.component';
 import { EquipmentComponent } from './modules/work-requests/new-request/equipment/equipment.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { EquipmentComponent } from './modules/work-requests/new-request/equipmen
     DefaultModule,
     SharedModule,
     MatFormFieldModule,
+    FlexLayoutModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -14,6 +14,11 @@ import { SafetydocumentsComponent } from './modules/safetydocuments/safetydocume
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { WorkRequestsComponent } from './modules/work-requests/work-requests.component';
+import { NewRequestComponent } from './modules/work-requests/new-request/new-request.component';
+import { BasicInformationComponent } from './modules/work-requests/new-request/basic-information/basic-information.component';
+import { ChangeHistoryComponent } from './modules/work-requests/new-request/change-history/change-history.component';
+import { MultimediaAttachmentsComponent } from './modules/work-requests/new-request/multimedia-attachments/multimedia-attachments.component';
+import { EquipmentComponent } from './modules/work-requests/new-request/equipment/equipment.component';
 
 const routes: Routes = [
   {
@@ -71,6 +76,10 @@ const routes: Routes = [
       {
         path: 'work-requests',
         component: WorkRequestsComponent,
+      },
+      {
+        path: 'new-work-request',
+        component: NewRequestComponent,
       },
     ],
   },
