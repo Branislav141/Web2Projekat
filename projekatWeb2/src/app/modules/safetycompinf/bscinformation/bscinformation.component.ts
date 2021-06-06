@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-bscinformation',
   templateUrl: './bscinformation.component.html',
-  styleUrls: ['./bscinformation.component.css']
+  styleUrls: ['./bscinformation.component.css'],
 })
 export class BscinformationComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

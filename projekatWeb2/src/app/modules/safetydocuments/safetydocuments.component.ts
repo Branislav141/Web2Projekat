@@ -34,20 +34,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-safetydocuments',
   templateUrl: './safetydocuments.component.html',
-  styleUrls: ['./safetydocuments.component.css']
+  styleUrls: ['./safetydocuments.component.css'],
 })
 export class SafetydocumentsComponent implements OnInit {
-
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
   }
-
 }

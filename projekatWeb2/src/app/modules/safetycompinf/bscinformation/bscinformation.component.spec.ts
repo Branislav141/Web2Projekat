@@ -8,9 +8,8 @@ describe('BscinformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BscinformationComponent ]
-    })
-    .compileComponents();
+      declarations: [BscinformationComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

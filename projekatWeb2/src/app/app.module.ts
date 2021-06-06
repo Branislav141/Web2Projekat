@@ -8,6 +8,9 @@ import { PocetnaStranicaComponent } from './components/pocetna-stranica/pocetna-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { RegisterComponent } from './components/register/register.component';
+import {SharedModule} from "./shared/shared.module";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -15,22 +18,17 @@ import { RegisterComponent } from './components/register/register.component';
     PocetnaStranicaComponent,
     LoginComponent,
     RegisterComponent,
-    
-
-   
-   
-  
-    
- 
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DefaultModule
-  
+    DefaultModule,
+    SharedModule,
+    MatFormFieldModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

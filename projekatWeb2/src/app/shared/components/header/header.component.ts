@@ -1,25 +1,21 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  isLoggedIn = false;
 
-  @Output() toggleSideBarForMe:EventEmitter<any>=new EventEmitter();
-  constructor() { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.getIsLoggedIn();
   }
 
-  toggleSideBar(){
-    this.toggleSideBarForMe.emit();
-    setTimeout(()=>{
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    },300);
+  logOut() {
+    this.authService.logOut();
   }
 }

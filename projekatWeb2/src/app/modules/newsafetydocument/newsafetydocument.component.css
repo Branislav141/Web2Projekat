@@ -1,12 +1,11 @@
 .table1 {
-    border-spacing: 20px;
-  }
-  
-  .table2{
-      border-spacing: 10px;
-      
-  }
-  
-  .mat-list {
-      border: solid 2px #000;
-  }
+  border-spacing: 20px;
+}
+
+.table2 {
+  border-spacing: 10px;
+}
+
+.mat-list {
+  border: solid 2px #000;
+}

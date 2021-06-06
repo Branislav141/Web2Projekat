@@ -1,26 +1,22 @@
-<div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="20px" >
- 
-    <div fxFlex="20"  >
-        <mat-action-list >
-            <button mat-list-item (click)="toggleBasic()"> Basic Information </button>
-            <button mat-list-item (click)="toggleDevices()" > Devices </button>
-            <button mat-list-item (click)="toggleResolution()"> Resolution </button>
-            <button mat-list-item (click)="toggleCalls()"> Calls </button>
-           
-          </mat-action-list>
-
-    </div>
-<div  fxFlex="100" >
+<div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="20px">
+  <div fxFlex="20">
+    <mat-action-list>
+      <button mat-list-item (click)="toggleBasic()">Basic Information</button>
+      <button mat-list-item (click)="toggleDevices()">Devices</button>
+      <button mat-list-item (click)="toggleResolution()">Resolution</button>
+      <button mat-list-item (click)="toggleCalls()">Calls</button>
+    </mat-action-list>
+  </div>
+  <div fxFlex="100">
     <app-basic-information *ngIf="showMe"></app-basic-information>
     <app-devices *ngIf="showMe1"></app-devices>
     <app-resolution *ngIf="showMe2"></app-resolution>
     <app-calls *ngIf="showMe3"></app-calls>
+  </div>
 </div>
-
-</div>
-<br>
+<br />
 <mat-divider></mat-divider>
 <div fxLayout="row" fxLayoutAlign="end">
-    <a routerLink="/default/myIncidents"><mat-icon>cancel</mat-icon> </a> 
-    <mat-icon>save</mat-icon>
+  <a routerLink="/default/myIncidents"><mat-icon>cancel</mat-icon> </a>
+  <mat-icon>save</mat-icon>
 </div>

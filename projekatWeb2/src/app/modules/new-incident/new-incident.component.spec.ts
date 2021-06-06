@@ -8,9 +8,8 @@ describe('NewIncidentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewIncidentComponent ]
-    })
-    .compileComponents();
+      declarations: [NewIncidentComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

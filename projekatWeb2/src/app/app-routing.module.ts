@@ -11,59 +11,64 @@ import { NewIncidentComponent } from './modules/new-incident/new-incident.compon
 import { NewsafetydocumentComponent } from './modules/newsafetydocument/newsafetydocument.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import { SafetydocumentsComponent } from './modules/safetydocuments/safetydocuments.component';
-
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
-
-
-{
-  path:'',
-  component:PocetnaStranicaComponent,
-},
-{
-  path:'register',
-  component:RegisterComponent,
-},
+  {
+    path: '',
+    component: PocetnaStranicaComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
 
   {
-    path:'default',
-    component:DefaultComponent,
-    children:[{
-      path:'dashboard',
-      component:DashboardComponent
-  }, {
-    path:'posts',
-    component:PostsComponent
-    },
-    {
-      path:'calls',
-      component:CallsComponent
+    path: 'default',
+    component: DefaultComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
       },
-    {
-      path:'myIncidents',
-    component:MyIncidentsComponent
-    },
-    {
-      path:'newIncidents',
-    component:NewIncidentComponent
-    },
-    {
-      path:'safety',
-    component:SafetydocumentsComponent
-    },
-    {
-      path:'newsafetydoc',
-    component:NewsafetydocumentComponent
-    },
-  ]},
-  
-
-
-
+      {
+        path: 'posts',
+        component: PostsComponent,
+      },
+      {
+        path: 'calls',
+        component: CallsComponent,
+      },
+      {
+        path: 'myIncidents',
+        component: MyIncidentsComponent,
+      },
+      {
+        path: 'newIncidents',
+        component: NewIncidentComponent,
+      },
+      {
+        path: 'safety',
+        component: SafetydocumentsComponent,
+      },
+      {
+        path: 'newsafetydoc',
+        component: NewsafetydocumentComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

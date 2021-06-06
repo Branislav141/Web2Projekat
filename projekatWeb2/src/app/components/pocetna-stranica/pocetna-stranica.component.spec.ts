@@ -8,9 +8,8 @@ describe('PocetnaStranicaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PocetnaStranicaComponent ]
-    })
-    .compileComponents();
+      declarations: [PocetnaStranicaComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
