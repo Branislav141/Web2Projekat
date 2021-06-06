@@ -11,6 +11,8 @@ import { RegisterComponent } from './components/register/register.component';
 import {SharedModule} from "./shared/shared.module";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { ProfileComponent } from './components/profile/profile.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { WorkRequestsComponent } from './modules/work-requests/work-requests.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
+    AdminPanelComponent,
+    WorkRequestsComponent,
   ],
   imports: [
     BrowserModule,

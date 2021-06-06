@@ -12,6 +12,7 @@ import { NewsafetydocumentComponent } from './modules/newsafetydocument/newsafet
 import { PostsComponent } from './modules/posts/posts.component';
 import { SafetydocumentsComponent } from './modules/safetydocuments/safetydocuments.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 const routes: Routes = [
   {
@@ -27,10 +28,13 @@ const routes: Routes = [
     component: ProfileComponent,
   },
   {
+    path: 'admin-panel',
+    component: AdminPanelComponent,
+  },
+  {
     path: 'register',
     component: RegisterComponent,
   },
-
   {
     path: 'default',
     component: DefaultComponent,
