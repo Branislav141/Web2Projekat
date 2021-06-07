@@ -21,6 +21,7 @@ import { EquipmentComponent } from './modules/work-requests/new-request/equipmen
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatListModule} from "@angular/material/list";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FileUploadModule} from "ng2-file-upload";
 
 @NgModule({
   declarations: [
@@ -37,17 +38,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MultimediaAttachmentsComponent,
     EquipmentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    DefaultModule,
-    SharedModule,
-    MatFormFieldModule,
-    FlexLayoutModule,
-    MatListModule,
-    NgbModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        DefaultModule,
+        SharedModule,
+        MatFormFieldModule,
+        FlexLayoutModule,
+        MatListModule,
+        NgbModule,
+        FileUploadModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })
