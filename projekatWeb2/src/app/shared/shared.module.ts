@@ -16,6 +16,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { MatInputModule } from '@angular/material/input';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
     AreaComponent,
     CardComponent,
     PieComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     CommonModule,

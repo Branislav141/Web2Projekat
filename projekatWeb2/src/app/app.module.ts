@@ -20,6 +20,7 @@ import { MultimediaAttachmentsComponent } from './modules/work-requests/new-requ
 import { EquipmentComponent } from './modules/work-requests/new-request/equipment/equipment.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatListModule} from "@angular/material/list";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {MatListModule} from "@angular/material/list";
     MatFormFieldModule,
     FlexLayoutModule,
     MatListModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

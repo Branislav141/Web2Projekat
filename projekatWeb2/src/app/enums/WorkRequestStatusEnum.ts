@@ -1,4 +1,7 @@
 export enum WorkRequestStatusEnum {
-  DRAFT,
-  SUBMITTED,
+  DRAFT = 'DRAFT',
+  SUBMITTED = 'SUBMITTED',
+  APPROVED = 'APPROVED',
+  DENIED = 'DENIED',
+  CANCELED = 'CANCELED',
 }
