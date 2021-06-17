@@ -5,10 +5,10 @@
       <li routerLink="/">Home</li>
       <li *ngIf="!isLoggedIn" routerLink="/login">Login</li>
       <li *ngIf="!isLoggedIn" routerLink="/register">Register</li>
-      <li  routerLink="/profile">Profile</li>
+      <li *ngIf="isLoggedIn" routerLink="/profile">Profile</li>
       <li *ngIf="isLoggedIn" (click)="logOut()">Log Out</li>
-      <li routerLink="/admin-panel">Admin Panel</li>
-      <li routerLink="/default/dashboard">Dashboard</li>
+      <li *ngIf="isLoggedIn" routerLink="/admin-panel">Admin Panel</li>
+      <li *ngIf="isLoggedIn" routerLink="/default/dashboard">Dashboard</li>
     </ul>
   </mat-toolbar-row>
 </mat-toolbar>

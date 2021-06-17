@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -7,10 +6,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private _location: Location) {}
 
-  backClicked() {
-    this._location.back();
-  }
+  constructor() {}
+
   ngOnInit(): void {}
 }
