@@ -15,35 +15,42 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { WorkRequestsComponent } from './modules/work-requests/work-requests.component';
 import { NewRequestComponent } from './modules/work-requests/new-request/new-request.component';
-import { BasicInformationComponent } from './modules/work-requests/new-request/basic-information/basic-information.component';
-import { ChangeHistoryComponent } from './modules/work-requests/new-request/change-history/change-history.component';
-import { MultimediaAttachmentsComponent } from './modules/work-requests/new-request/multimedia-attachments/multimedia-attachments.component';
-import { EquipmentComponent } from './modules/work-requests/new-request/equipment/equipment.component';
+import { NoAuthGuard } from './guards/noauth.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './services/interceptors/token.interceptor';
 
 const routes: Routes = [
   {
     path: '',
     component: PocetnaStranicaComponent,
+    canActivate: [NoAuthGuard],
   },
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-  },
-  {
-    path: 'admin-panel',
-    component: AdminPanelComponent,
+    canActivate: [NoAuthGuard],
   },
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [NoAuthGuard],
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin-panel',
+    component: AdminPanelComponent,
+    canActivate: [AdminGuard],
   },
   {
     path: 'default',
     component: DefaultComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'dashboard',
@@ -88,5 +95,12 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class AppRoutingModule {}

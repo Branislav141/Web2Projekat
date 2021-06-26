@@ -1,14 +1,25 @@
-import { AccountStatusEnum } from '../enums/AccountStatusEnum';
-import { AccountTypeEnum } from '../enums/AccountTypeEnum';
+export class User {
+  firstName: string;
+  lastName: string;
+  username: string;
+  password: string;
+  birthday: Date;
+  email: string;
+  address: string;
+  accountType: string;
+  accountStatus: string;
+  id?: string;
 
-export interface User {
-  first_name?: string;
-  last_name?: string;
-  username?: string;
-  password?: string;
-  birthday?: Date;
-  email?: string;
-  address?: string;
-  account_type?: AccountTypeEnum;
-  account_status?: AccountStatusEnum;
+  constructor() {
+    this.lastName = '';
+    this.firstName = '';
+    this.username = '';
+    this.password = '';
+    this.birthday = new Date();
+    this.email = '';
+    this.address = '';
+    this.accountType = '';
+    this.accountStatus = '';
+    this.id = '';
+  }
 }

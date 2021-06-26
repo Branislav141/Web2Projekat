@@ -19,10 +19,28 @@ export class LoginComponent {
   ) {}
 
   login() {
+    if (!this.email.length || !this.password.length) {
+      this.toastr.warning('All fields are required', 'Warning');
+      return;
+    }
     this.authService
       .login({ email: this.email, password: this.password })
       .subscribe(
         () => {
+          const accountStatus = this.authService.currentUser.accountStatus;
+          if (accountStatus === 'Pending') {
+            this.authService.logOut();
+            this.toastr.warning(
+              'Pedning',
+              'Your account is still in pending state. Please wait to be approved'
+            );
+            return;
+          }
+          if (accountStatus === 'Declined') {
+            this.authService.logOut();
+            this.toastr.warning('Error', 'Your account is declined');
+            return;
+          }
           this.router.navigate(['/default/dashboard']);
           this.toastr.success('Login successful!', 'Successful!');
         },

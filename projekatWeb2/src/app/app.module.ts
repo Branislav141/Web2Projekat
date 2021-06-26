@@ -24,6 +24,9 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthGuard } from './guards/auth.guard';
+import { NoAuthGuard } from './guards/noauth.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,7 @@ import { ToastrModule } from 'ngx-toastr';
     FileUploadModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AuthGuard, NoAuthGuard, AdminGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

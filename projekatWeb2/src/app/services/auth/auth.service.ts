@@ -8,22 +8,21 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root',
 })
 export class AuthService {
-  baseUrl = 'http://localhost:5000/api/auth';
+  baseUrl = 'http://localhost:5000/api/auth/';
   jwtHelper = new JwtHelperService();
   decodedToken: any;
-  currentUser: User = {};
+  currentUser: User = new User();
 
   constructor(private httpClient: HttpClient) {}
 
   login(model: any) {
     return this.httpClient.post(this.baseUrl + 'login', model).pipe(
-      map((response: any) => {
-        const user = response;
-        if (user) {
-          localStorage.setItem('token', user.token);
-          localStorage.setItem('user', JSON.stringify(user.user));
-          this.decodedToken = this.jwtHelper.decodeToken(user.token);
-          this.currentUser = user.user;
+      map((data: any) => {
+        if (data) {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('user', JSON.stringify(data.user));
+          this.decodedToken = this.jwtHelper.decodeToken(data.token);
+          this.currentUser = data.user;
         }
       })
     );
@@ -34,8 +33,17 @@ export class AuthService {
   }
 
   getIsLoggedIn() {
-    const token = localStorage.getItem('token') || undefined;
-    return !this.jwtHelper.isTokenExpired(token);
+    const token = localStorage.getItem('token');
+    return !this.jwtHelper.isTokenExpired(token || undefined);
+  }
+
+  isAdmin() {
+    if (localStorage.getItem('user')) {
+      this.currentUser = JSON.parse(localStorage.getItem('user') || '');
+      return this.getIsLoggedIn() && this.currentUser.accountType === 'Admin';
+    } else {
+      return false;
+    }
   }
 
   logOut() {

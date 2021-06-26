@@ -2,13 +2,13 @@
   <mat-toolbar-row>
     <span>APP LOGO</span>
     <ul style="margin-top: 12px" fxLayout="row" fxLayoutGap="20px">
-      <li routerLink="/">Home</li>
-      <li *ngIf="!isLoggedIn" routerLink="/login">Login</li>
-      <li *ngIf="!isLoggedIn" routerLink="/register">Register</li>
-      <li *ngIf="isLoggedIn" routerLink="/profile">Profile</li>
-      <li *ngIf="isLoggedIn" (click)="logOut()">Log Out</li>
-      <li *ngIf="isLoggedIn" routerLink="/admin-panel">Admin Panel</li>
-      <li *ngIf="isLoggedIn" routerLink="/default/dashboard">Dashboard</li>
+      <li *ngIf="!isLoggedIn()" routerLink="/">Home</li>
+      <li *ngIf="!isLoggedIn()" routerLink="/login">Login</li>
+      <li *ngIf="!isLoggedIn()" routerLink="/register">Register</li>
+      <li *ngIf="isLoggedIn()" routerLink="/profile">Profile</li>
+      <li *ngIf="isAdmin()" routerLink="/admin-panel">Admin Panel</li>
+      <li *ngIf="isLoggedIn()" routerLink="/default/dashboard">Dashboard</li>
+      <li *ngIf="isLoggedIn()" (click)="logOut()">Log Out</li>
     </ul>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -17,8 +17,12 @@
         <input [(ngModel)]="user.password" type="password" class="form-control" />
       </div>
       <div class="input-group mb-3">
+        <span class="input-group-text">Confirm password:</span>
+        <input [(ngModel)]="confirmedPassword" type="password" class="form-control" />
+      </div>
+      <div class="input-group mb-3">
         <span class="input-group-text">First Name:</span>
-        <input [(ngModel)]="user.first_name" type="text" class="form-control" />
+        <input [(ngModel)]="user.firstName" type="text" class="form-control" />
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text">Last Name:</span>
@@ -27,7 +31,7 @@
           class="form-control"
           placeholder="Last Name"
           aria-label="Last Name"
-          [(ngModel)]="user.last_name"
+          [(ngModel)]="user.lastName"
         />
       </div>
       <div class="input-group mb-3">
@@ -52,10 +56,10 @@
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text">Tip Korisnika:</span>
-        <select [(ngModel)]="user.account_type" class="form-select" aria-label="Default select example">
-          <option [value]="accountTypes.MEMBER" selected>Clan Ekipe</option>
-          <option [value]="accountTypes.DISPATCHER">Dispecer</option>
-          <option [value]="accountTypes.WORKER">Radnik</option>
+        <select [(ngModel)]="user.accountType" class="form-select" aria-label="Default select example">
+          <option [value]="'Member'" selected>Clan Ekipe</option>
+          <option [value]="'Dispatcher'">Dispecer</option>
+          <option [value]="'Worker'">Radnik</option>
         </select>
       </div>
       <div class="text-center">
