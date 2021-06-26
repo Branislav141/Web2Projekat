@@ -1,20 +1,18 @@
 using Backend.Areas.Identity.Data;
 using Backend.Data;
+using Backend.Helpers;
+using EmailService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,6 +31,7 @@ namespace Backend
         public void ConfigureServices(IServiceCollection services)
         {
             var key = Encoding.ASCII.GetBytes("MY_BIG_SECRET_KEY_GHJDKGDSNGNDSNJKGNJDS");
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAuthentication(a =>
             {
@@ -57,7 +56,7 @@ namespace Backend
                     };
                     b.RequireHttpsMetadata = false;
                     b.SaveToken = true;
-                    b.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    b.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(key),
@@ -65,6 +64,13 @@ namespace Backend
                         ValidateAudience = false
                     };
                 });
+
+            var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddTransient<IImageHandler, ImageHandler>();
+            services.AddTransient<IImageWriter, ImageWriter>();
+
+            services.AddScoped<IEmailSender, EmailSender>();
 
             services.AddControllers();
         }
@@ -79,9 +85,17 @@ namespace Backend
 
             app.UseHttpsRedirection();
 
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources/Images")),
+
+            });
 
             app.UseEndpoints(endpoints =>
             {

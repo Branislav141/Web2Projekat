@@ -16,10 +16,9 @@ namespace Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class AuthController : ControllerBase
     {
-        private BackendContext _dbContext;
+        private readonly BackendContext _dbContext;
         private readonly UserManager<BackendUser> _userManager;
         private readonly SignInManager<BackendUser> _signInManager;
 
@@ -30,7 +29,6 @@ namespace Backend.Controllers
             _signInManager = signInManager;
         }
 
-        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
@@ -53,18 +51,16 @@ namespace Backend.Controllers
                     var token = tokenHandler.CreateToken(tokenDescriptor);
                     var tokenString = tokenHandler.WriteToken(token);
 
-                    return Ok(new { Token = tokenString });
+                    return Ok(new { token = tokenString, user = user });
                 }
                 else
                 {
-                    return Ok("failed, try again");
+                    return BadRequest("Password not valid");
                 }
             }
-
-           return Ok("failed, try again");
+            return BadRequest("No user with such credentials");
         }
 
-        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegistrationModel registrationModel)
         {
@@ -72,7 +68,13 @@ namespace Backend.Controllers
             {
                 Email = registrationModel.Email,
                 UserName = registrationModel.Email,
-                EmailConfirmed = false
+                EmailConfirmed = false,
+                FirstName = registrationModel.FirstName,
+                LastName = registrationModel.LastName,
+                Birthday = registrationModel.Birthday,
+                Address = registrationModel.Address,
+                AccountType = registrationModel.AccountType,
+                AccountStatus = "Pending"
             };
 
             var result = await _userManager.CreateAsync(backendUser, registrationModel.Password);
@@ -89,7 +91,7 @@ namespace Backend.Controllers
                     sb.Append(error.Description);
                 }
 
-                return Ok(new { Result = $"Register Failed: {sb}" });
+                return BadRequest(new { Result = $"Register Failed: {sb}" });
             }
         }
 
