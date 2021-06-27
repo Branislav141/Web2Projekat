@@ -39,7 +39,7 @@ namespace Backend.Controllers
 
             await _dbContext.SaveChangesAsync();
 
-            var message = new Message(new string[] { "andrejkaravida@gmail.com" }, "Your account has been approved!", 
+            var message = new Message(new string[] { user.Email }, "Your account has been approved!", 
                 "This is to confirm that your account has been successfully activated. You can log in with your username and password.");
             _emailSender.SendEmail(message);
 
@@ -55,7 +55,7 @@ namespace Backend.Controllers
             await _dbContext.SaveChangesAsync();
 
 
-            var message = new Message(new string[] { "andrejkaravida@gmail.com" }, "Your account has been declined!",
+            var message = new Message(new string[] { user.Email }, "Your account has been declined!",
                 "This is to confirm that your account has been declined for access.");
             _emailSender.SendEmail(message);
 
