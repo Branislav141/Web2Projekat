@@ -1,0 +1,26 @@
+<div class="container">
+  <button type="button" class="btn btn-secondary" routerLink="/default/new-team">New</button>
+  <div class="card" style="margin-top: 20px">
+    <div class="card-body">
+      <h2 class="text-center">Teams - All</h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Participants</th>
+          <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let team of teams; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td class="routelink" (click)="modifyTeam(team.id)">{{ team.name }}</td>
+          <td>{{getParticipantsList(team.name)}}</td>
+          <td><button mat-raised-button color="warn" (click)="deleteTeam(team.name)">Delete Team</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

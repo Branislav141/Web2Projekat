@@ -21,7 +21,7 @@
   style="margin-right: 20px"
   type="button"
   class="btn btn-success"
-  (click)="changeStatus(workRequestStatus.APPROVED)"
+  (click)="changeStatus('APPROVED')"
 >
   Approve
 </button>
@@ -29,14 +29,14 @@
   style="margin-right: 20px"
   type="button"
   class="btn btn-danger"
-  (click)="changeStatus(workRequestStatus.DENIED)"
+  (click)="changeStatus('DENIED')"
 >
   Deny
 </button>
 <button
   type="button"
   class="btn btn-secondary"
-  (click)="changeStatus(workRequestStatus.CANCELED)"
+  (click)="changeStatus('CANCELED')"
 >
   Cancel
 </button>

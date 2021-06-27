@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WorkRequest } from '../../../models/WorkRequest';
 
 @Component({
   selector: 'app-new-request',

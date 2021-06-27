@@ -40,6 +40,11 @@
   color: #fff;
 }
 
+.card-counter.teams {
+  background-color: #dab326;
+  color: #fff;
+}
+
 .card-counter i {
   font-size: 5em;
   opacity: 0.2;

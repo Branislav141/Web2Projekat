@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Change } from '../../../../models/Change';
-import { WorkRequestStatusEnum } from '../../../../enums/WorkRequestStatusEnum';
 import { ConfirmationService } from '../../../../services/confirmation/confirmation.service';
 
 @Component({
@@ -10,13 +9,12 @@ import { ConfirmationService } from '../../../../services/confirmation/confirmat
 })
 export class ChangeHistoryComponent implements OnInit {
   changes: Change[] = [];
-  workRequestStatus = WorkRequestStatusEnum;
 
   constructor(private confirmationDialogService: ConfirmationService) {}
 
   ngOnInit(): void {}
 
-  changeStatus(newStatus: WorkRequestStatusEnum) {
+  changeStatus(newStatus: string) {
     this.confirmationDialogService
       .confirm('Warning', 'Please confirm changing status to: ' + newStatus)
       .then((confirmed) => console.log('User confirmed:', confirmed))

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Type:</span>
-    <select class="form-select">
+    <select class="form-select" [(ngModel)]="workRequest.documentType">
       <option value="planned_work" selected>Planned work</option>
       <option value="unplanned_work">Unplanned work</option>
     </select>
@@ -10,13 +10,16 @@
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Status:</span>
-    <select class="form-select">
+    <select class="form-select" disabled [(ngModel)]="workRequest.status">
       <option value="planned_work" selected>Draft</option>
+      <option value="planned_work">Approved</option>
+      <option value="planned_work">Denied</option>
+      <option value="planned_work">Canceled</option>
     </select>
   </div>
 </div>
 <div class="row">
-  <div class="col input-group mb-3">
+  <div class="col input-group mb-3" [(ngModel)]="workRequest.incident">
     <span class="input-group-text">Incident:</span>
     <select class="form-select">
       <option value="incident1" selected>Incident 1</option>
@@ -25,7 +28,7 @@
   </div>
   <div class="col input-group mb-3">
     <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="workRequest.urgent">
       <label class="form-check-label" for="flexSwitchCheckDefault">Emergency work</label>
     </div>
   </div>
@@ -39,13 +42,13 @@
   </div>
   <div class="col input-group mb-3">
     <span class="input-group-text">Company</span>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [(ngModel)]="workRequest.company"/>
   </div>
 </div>
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Start date/time:</span>
-    <input type="date" class="form-control" />
+    <input type="date" class="form-control" [(ngModel)]="workRequest.startedTime"/>
   </div>
   <div class="col input-group mb-3">
     <span class="input-group-text">Incident:</span>
@@ -55,38 +58,35 @@
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">End date/time:</span>
-    <input type="date" class="form-control" />
+    <input type="date" class="form-control" [(ngModel)]="workRequest.finishedTime"/>
   </div>
   <div class="col input-group mb-3">
     <span class="input-group-text">Phone No:</span>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [(ngModel)]="workRequest.phoneNumber"/>
   </div>
 </div>
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Created by:</span>
-    <span class="form-control">Stevica Zoric</span>
+    <span class="form-control">{{currentUser}}</span>
   </div>
   <div class="col input-group mb-3">
     <span class="input-group-text">Date/time created</span>
-    <input type="date" class="form-control" />
+    <input type="date" disabled class="form-control"/>
   </div>
 </div>
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Purpose:</span>
-    <input type="text" class="form-control" />
-  </div>
-</div>
-<div class="row">
-  <div class="col input-group mb-3">
-    <span class="input-group-text">Details:</span>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [(ngModel)]="workRequest.purpose"/>
   </div>
 </div>
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Notes:</span>
-    <input type="text" class="form-control" />
+    <input type="text" [(ngModel)]="workRequest.notes" class="form-control"/>
   </div>
+</div>
+<div class="text-center">
+  <button  mat-raised-button color="primary" (click)="addWorkRequest()">Add</button>
 </div>

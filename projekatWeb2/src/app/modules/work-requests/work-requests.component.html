@@ -15,11 +15,11 @@
         </thead>
         <tbody>
           <tr *ngFor="let workRequest of workRequests">
-            <th scope="row">{{ workRequest.id }}</th>
-            <td>{{ workRequest.start_date | date: "mediumDate" }}</td>
-            <td>{{ workRequest.phone_number }}</td>
+            <td>{{ workRequest.id }}</td>
+            <td>{{ workRequest.startedTime | date: "mediumDate" }}</td>
+            <td>{{ workRequest.phoneNumber }}</td>
             <td>{{ workRequest.status }}</td>
-            <td>{{ workRequest.address }}</td>
+            <td>{{ workRequest.street }}</td>
           </tr>
         </tbody>
       </table>

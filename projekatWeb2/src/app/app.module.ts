@@ -27,6 +27,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './guards/auth.guard';
 import { NoAuthGuard } from './guards/noauth.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { MaterialModule } from './modules/angular-material/material.module';
+import { TeamsComponent } from './modules/teams/teams.component';
+import { NewTeamComponent } from './modules/teams/new-team/new-team.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.component';
 
 @NgModule({
   declarations: [
@@ -42,12 +47,16 @@ import { AdminGuard } from './guards/admin.guard';
     ChangeHistoryComponent,
     MultimediaAttachmentsComponent,
     EquipmentComponent,
+    TeamsComponent,
+    NewTeamComponent,
+    ModifyTeamComponent,
   ],
   imports: [
     BrowserModule,
     ToastrModule.forRoot(),
     HttpClientModule,
     AppRoutingModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     DefaultModule,
     SharedModule,
@@ -57,8 +66,9 @@ import { AdminGuard } from './guards/admin.guard';
     NgbModule,
     FileUploadModule,
     FormsModule,
+    MaterialModule,
   ],
-  providers: [AuthGuard, NoAuthGuard, AdminGuard],
+  providers: [AuthGuard, NoAuthGuard, AdminGuard, NewTeamComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

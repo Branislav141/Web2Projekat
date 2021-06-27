@@ -7,9 +7,9 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
 />
-<div class="container">
+
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-sm-2">
       <div class="card-counter danger">
         <a routerLink="/default/myIncidents"
           ><i class="fa fa-exclamation-triangle"></i
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-sm-2">
       <div class="card-counter primary">
         <i class="fa fa-book"></i>
 
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-sm-2">
       <div class="card-counter success">
         <a routerLink="/default/safety"> <i class="fa fa-shield"></i></a>
 
@@ -34,14 +34,21 @@
       </div>
     </div>
 
-    <div class="col-md-3" style="cursor: pointer" routerLink="/default/work-requests">
+    <div class="col-sm-2" style="cursor: pointer" routerLink="/default/work-requests">
       <div class="card-counter info">
         <i class="fa fa-wrench"></i>
         <span class="count-name">WORK REQUESTS</span>
       </div>
     </div>
+
+    <div class="col-sm-2" style="cursor: pointer" routerLink="/default/teams">
+      <div class="card-counter teams">
+        <i class="fa fa-users"></i>
+        <span class="count-name">TEAMS</span>
+      </div>
+    </div>
   </div>
-</div>
+
 <br />
 <br />
 

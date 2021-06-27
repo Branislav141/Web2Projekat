@@ -1,7 +1,5 @@
-import { ElementTypeEnum } from '../enums/ElementTypeEnum';
-
 export interface Element {
-  type: ElementTypeEnum;
+  type: string;
   id: number;
   name: string;
   address: string;

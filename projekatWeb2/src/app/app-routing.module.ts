@@ -20,6 +20,9 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/interceptors/token.interceptor';
+import { TeamsComponent } from './modules/teams/teams.component';
+import { NewTeamComponent } from './modules/teams/new-team/new-team.component';
+import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.component';
 
 const routes: Routes = [
   {
@@ -85,8 +88,20 @@ const routes: Routes = [
         component: WorkRequestsComponent,
       },
       {
+        path: 'teams',
+        component: TeamsComponent,
+      },
+      {
         path: 'new-work-request',
         component: NewRequestComponent,
+      },
+      {
+        path: 'new-team',
+        component: NewTeamComponent,
+      },
+      {
+        path: 'modify-team/:id',
+        component: ModifyTeamComponent,
       },
     ],
   },
