@@ -3,6 +3,17 @@
   <input type="text" class="form-control" [(ngModel)]="team.name"/>
 </div>
 
+<div class="mt-3">
+  <h4>Participants:</h4>
+</div>
+
+<ng-container *ngFor="let user of users">
+  <div>
+    <mat-checkbox class="example-margin mt-2" [checked]="isChecked(user.email)"
+                  (change)="addRemoveParticipant($event.checked, user.email)">{{user.email}}</mat-checkbox>
+  </div>
+</ng-container>
+
 <div>
-  <button mat-raised-button color="primary" (click)="modifyTeam()">Modify</button>
+  <button class="mt-3" mat-raised-button color="primary" (click)="modifyTeam()">Modify</button>
 </div>

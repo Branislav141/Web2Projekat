@@ -16,7 +16,7 @@
         <tr *ngFor="let team of teams; let i = index">
           <td>{{ i + 1 }}</td>
           <td class="routelink" (click)="modifyTeam(team.id)">{{ team.name }}</td>
-          <td>{{getParticipantsList(team.name)}}</td>
+          <td>{{team.participants}}</td>
           <td><button mat-raised-button color="warn" (click)="deleteTeam(team.name)">Delete Team</button></td>
         </tr>
         </tbody>

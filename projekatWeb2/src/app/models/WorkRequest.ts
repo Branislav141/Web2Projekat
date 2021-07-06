@@ -1,6 +1,6 @@
 export class WorkRequest {
   id: number;
-  documentType: string;
+  type: string;
   status: string;
   incident: number;
   street: string;
@@ -12,11 +12,12 @@ export class WorkRequest {
   urgent: boolean;
   company: string;
   phoneNumber: string;
-  equipment: string[];
+  equipment: string;
+  creationDate: string;
 
   constructor() {
     this.id = 0;
-    this.documentType = '';
+    this.type = '';
     this.status = 'Draft';
     this.incident = 0;
     this.street = '';
@@ -28,6 +29,7 @@ export class WorkRequest {
     this.urgent = false;
     this.company = '';
     this.phoneNumber = '';
-    this.equipment = [];
+    this.equipment = '';
+    this.creationDate = '';
   }
 }

@@ -24,18 +24,6 @@ export class TeamsComponent implements OnInit {
     });
   }
 
-  getParticipantsList(teamName: string): string {
-    const team = this.teams.find((x) => x.name === teamName);
-    let participantsList = '';
-
-    // @ts-ignore
-    team.participants.forEach((p) => {
-      participantsList += p.name + ', ';
-    });
-
-    return participantsList;
-  }
-
   deleteTeam(teamName: string) {
     this.teamsService.deleteTeam(teamName).subscribe(
       () => {

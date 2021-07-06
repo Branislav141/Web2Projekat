@@ -5,6 +5,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService } from '../../services/confirmation/confirmation.service';
 import { PhotosService } from '../../services/photos/photos.service';
+import { Photo } from '../../models/Photo';
 
 @Component({
   selector: 'app-profile',
@@ -16,8 +17,9 @@ export class ProfileComponent implements OnInit {
   // @ts-ignore
   uploader: FileUploader;
   hasBaseDropZoneOver = false;
-  baseUrl = 'http://localhost:5000/api/photos/';
-  currentPhoto: null;
+  baseUrl = 'http://localhost:5000/api/upload/users/';
+  // @ts-ignore
+  currentPhoto: Photo;
 
   constructor(
     private authService: AuthService,
@@ -27,7 +29,15 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.user = this.authService.currentUser;
+    this.user = this.authService.getCurrentUser();
+    this.getCurrentUserPhoto();
+    this.initializeUploader();
+  }
+
+  getCurrentUserPhoto() {
+    this.photosService.getPhotoForUser(this.user.id).subscribe((data) => {
+      this.currentPhoto = data;
+    });
   }
 
   initializeUploader() {
@@ -47,7 +57,7 @@ export class ProfileComponent implements OnInit {
 
     this.uploader.onSuccessItem = (item, response) => {
       if (response) {
-        this.currentPhoto = JSON.parse(response);
+        this.getCurrentUserPhoto();
       }
     };
   }
@@ -56,7 +66,7 @@ export class ProfileComponent implements OnInit {
     this.hasBaseDropZoneOver = e;
   }
 
-  deletePhoto(id: number) {
+  deletePhoto() {
     this.confirmationService
       .confirm(
         'Confirmation',
@@ -65,8 +75,9 @@ export class ProfileComponent implements OnInit {
         '' + 'Cancel'
       )
       .then(() => {
-        this.photosService.deletePhoto(id).subscribe(
+        this.photosService.deleteUserPhoto(this.currentPhoto.id).subscribe(
           () => {
+            // @ts-ignore
             this.currentPhoto = null;
             this.toastrService.success('Photo has been deleted');
           },

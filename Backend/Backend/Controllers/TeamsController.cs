@@ -24,7 +24,7 @@ namespace Backend.Controllers
         [HttpGet]
         public IActionResult GetAllTeams()
         {
-            List<Team> teams = _dbContext.Teams.Include(p => p.Participants).Where(x => x.IsDeleted == false).ToList();
+            List<Team> teams = _dbContext.Teams.Where(x => x.IsDeleted == false).ToList();
 
             return Ok(teams);
         }
@@ -32,7 +32,7 @@ namespace Backend.Controllers
         [HttpGet("{id}")]
         public IActionResult GetTeam(int id)
         {
-            Team team = _dbContext.Teams.Include(p => p.Participants).Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault();
+            Team team = _dbContext.Teams.Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault();
 
             return Ok(team);
         }
@@ -50,7 +50,7 @@ namespace Backend.Controllers
 
             Team team = new Team();
             team.Name = teamToCreate.Name;
-            team.Participants = new List<Participant>();
+            team.Participants = "";
 
             _dbContext.Teams.Add(team);
             _dbContext.SaveChanges();
@@ -71,13 +71,8 @@ namespace Backend.Controllers
 
             Team team = _dbContext.Teams.Where(x => x.Name == teamToModify.Name).FirstOrDefault();
 
-            team.Participants = new List<Participant>();
+            team.Participants = teamToModify.Participants;
 
-            foreach(var participant in teamToModify.Participants)
-            {
-                team.Participants.Add(new Participant() { Name = participant });
-            }
-        
             _dbContext.SaveChanges();
 
             return Ok();

@@ -89,14 +89,20 @@ namespace Backend.Migrations.Data
                     b.ToTable("BackendUser");
                 });
 
-            modelBuilder.Entity("Backend.Models.Equipment", b =>
+            modelBuilder.Entity("Backend.Models.Change", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("User")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("WorkRequestId")
@@ -106,27 +112,7 @@ namespace Backend.Migrations.Data
 
                     b.HasIndex("WorkRequestId");
 
-                    b.ToTable("Equipment");
-                });
-
-            modelBuilder.Entity("Backend.Models.Participant", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("TeamId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TeamId");
-
-                    b.ToTable("Participant");
+                    b.ToTable("Change");
                 });
 
             modelBuilder.Entity("Backend.Models.Photo", b =>
@@ -165,6 +151,9 @@ namespace Backend.Migrations.Data
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Participants")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Teams");
@@ -183,7 +172,7 @@ namespace Backend.Migrations.Data
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DocumentType")
+                    b.Property<string>("Equipment")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FinishedTime")
@@ -210,6 +199,9 @@ namespace Backend.Migrations.Data
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Urgent")
                         .HasColumnType("bit");
 
@@ -221,18 +213,34 @@ namespace Backend.Migrations.Data
                     b.ToTable("WorkRequests");
                 });
 
-            modelBuilder.Entity("Backend.Models.Equipment", b =>
+            modelBuilder.Entity("Backend.Models.WorkRequestPhoto", b =>
                 {
-                    b.HasOne("Backend.Models.WorkRequest", null)
-                        .WithMany("Equipment")
-                        .HasForeignKey("WorkRequestId");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("WorkRequestId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WorkRequestId");
+
+                    b.ToTable("WorkRequestPhotos");
                 });
 
-            modelBuilder.Entity("Backend.Models.Participant", b =>
+            modelBuilder.Entity("Backend.Models.Change", b =>
                 {
-                    b.HasOne("Backend.Models.Team", null)
-                        .WithMany("Participants")
-                        .HasForeignKey("TeamId");
+                    b.HasOne("Backend.Models.WorkRequest", null)
+                        .WithMany("ChangeHistory")
+                        .HasForeignKey("WorkRequestId");
                 });
 
             modelBuilder.Entity("Backend.Models.Photo", b =>
@@ -240,6 +248,13 @@ namespace Backend.Migrations.Data
                     b.HasOne("Backend.Areas.Identity.Data.BackendUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Backend.Models.WorkRequestPhoto", b =>
+                {
+                    b.HasOne("Backend.Models.WorkRequest", "WorkRequest")
+                        .WithMany()
+                        .HasForeignKey("WorkRequestId");
                 });
 #pragma warning restore 612, 618
         }

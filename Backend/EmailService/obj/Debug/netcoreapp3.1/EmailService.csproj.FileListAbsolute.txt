@@ -1,0 +1,9 @@
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.csprojAssemblyReference.cache
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\Korisnik\Downloads\Web2Projekat-main\Web2Projekat-main\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb

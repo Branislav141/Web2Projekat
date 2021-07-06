@@ -12,11 +12,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { WorkRequestsComponent } from './modules/work-requests/work-requests.component';
-import { NewRequestComponent } from './modules/work-requests/new-request/new-request.component';
-import { BasicInformationComponent } from './modules/work-requests/new-request/basic-information/basic-information.component';
-import { ChangeHistoryComponent } from './modules/work-requests/new-request/change-history/change-history.component';
-import { MultimediaAttachmentsComponent } from './modules/work-requests/new-request/multimedia-attachments/multimedia-attachments.component';
-import { EquipmentComponent } from './modules/work-requests/new-request/equipment/equipment.component';
+import { WorkRequestComponent } from './modules/work-requests/work-request/work-request.component';
+import { BasicInformationComponent } from './modules/work-requests/work-request/basic-information/basic-information.component';
+import { ChangeHistoryComponent } from './modules/work-requests/work-request/change-history/change-history.component';
+import { MultimediaAttachmentsComponent } from './modules/work-requests/work-request/multimedia-attachments/multimedia-attachments.component';
+import { EquipmentComponent } from './modules/work-requests/work-request/equipment/equipment.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,6 +32,9 @@ import { TeamsComponent } from './modules/teams/teams.component';
 import { NewTeamComponent } from './modules/teams/new-team/new-team.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NewWorkRequestComponent } from './modules/work-requests/new-work-request/new-work-request.component';
+import { PhotoTileComponent } from './modules/work-requests/work-request/multimedia-attachments/photo-tile/photo-tile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,7 @@ import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.com
     ProfileComponent,
     AdminPanelComponent,
     WorkRequestsComponent,
-    NewRequestComponent,
+    WorkRequestComponent,
     BasicInformationComponent,
     ChangeHistoryComponent,
     MultimediaAttachmentsComponent,
@@ -50,6 +53,8 @@ import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.com
     TeamsComponent,
     NewTeamComponent,
     ModifyTeamComponent,
+    NewWorkRequestComponent,
+    PhotoTileComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +72,7 @@ import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.com
     FileUploadModule,
     FormsModule,
     MaterialModule,
+    MatCheckboxModule,
   ],
   providers: [AuthGuard, NoAuthGuard, AdminGuard, NewTeamComponent],
   bootstrap: [AppComponent],

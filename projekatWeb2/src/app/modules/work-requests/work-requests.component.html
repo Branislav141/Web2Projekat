@@ -15,7 +15,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let workRequest of workRequests">
-            <td>{{ workRequest.id }}</td>
+            <td class="link" (click)="goToWorkRequest(workRequest.id)">{{ workRequest.id }}</td>
             <td>{{ workRequest.startedTime | date: "mediumDate" }}</td>
             <td>{{ workRequest.phoneNumber }}</td>
             <td>{{ workRequest.status }}</td>

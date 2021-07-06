@@ -14,7 +14,7 @@ import { SafetydocumentsComponent } from './modules/safetydocuments/safetydocume
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { WorkRequestsComponent } from './modules/work-requests/work-requests.component';
-import { NewRequestComponent } from './modules/work-requests/new-request/new-request.component';
+import { WorkRequestComponent } from './modules/work-requests/work-request/work-request.component';
 import { NoAuthGuard } from './guards/noauth.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
@@ -23,6 +23,8 @@ import { TokenInterceptor } from './services/interceptors/token.interceptor';
 import { TeamsComponent } from './modules/teams/teams.component';
 import { NewTeamComponent } from './modules/teams/new-team/new-team.component';
 import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.component';
+import { NewWorkRequestComponent } from './modules/work-requests/new-work-request/new-work-request.component';
+import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes-guard';
 
 const routes: Routes = [
   {
@@ -88,12 +90,17 @@ const routes: Routes = [
         component: WorkRequestsComponent,
       },
       {
+        path: 'work-request/:id',
+        component: WorkRequestComponent,
+        canDeactivate: [PreventUnsavedChangesGuard],
+      },
+      {
         path: 'teams',
         component: TeamsComponent,
       },
       {
         path: 'new-work-request',
-        component: NewRequestComponent,
+        component: NewWorkRequestComponent,
       },
       {
         path: 'new-team',

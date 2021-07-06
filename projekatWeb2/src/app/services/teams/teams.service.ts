@@ -22,9 +22,9 @@ export class TeamsService {
     return this.httpClient.post(this.baseUrl, { name });
   }
 
-  modifyTeam(teamName: string, participants: string[]) {
+  modifyTeam(teamName: string, participants: string) {
     return this.httpClient.post(this.baseUrl + 'modify', {
-      teamName,
+      name: teamName,
       participants,
     });
   }

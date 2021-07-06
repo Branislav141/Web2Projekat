@@ -1,13 +1,11 @@
-import { Participant } from './Participant';
-
 export class Team {
   id: number;
   name: string;
-  participants: Participant[];
+  participants: string;
 
   constructor() {
     this.id = 0;
     this.name = '';
-    this.participants = [];
+    this.participants = '';
   }
 }

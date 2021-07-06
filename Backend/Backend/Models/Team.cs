@@ -6,7 +6,7 @@ namespace Backend.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Participant> Participants { get; set; }
+        public string Participants { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

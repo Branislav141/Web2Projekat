@@ -46,6 +46,24 @@ export class AuthService {
     }
   }
 
+  getUserEmail(): string {
+    if (localStorage.getItem('user')) {
+      this.currentUser = JSON.parse(localStorage.getItem('user') || '');
+      return this.currentUser.email;
+    } else {
+      return '';
+    }
+  }
+
+  getCurrentUser(): User {
+    if (localStorage.getItem('user')) {
+      this.currentUser = JSON.parse(localStorage.getItem('user') || '');
+      return this.currentUser;
+    } else {
+      return new User();
+    }
+  }
+
   logOut() {
     localStorage.removeItem('user');
     localStorage.removeItem('token');

@@ -8,7 +8,7 @@ export class User {
   address: string;
   accountType: string;
   accountStatus: string;
-  id?: string;
+  id: string;
 
   constructor() {
     this.lastName = '';

@@ -3,6 +3,7 @@ namespace Backend.Dtos
 {
     public class EquipmentToAdd
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public string Equipment { get; set; }
     }
 }

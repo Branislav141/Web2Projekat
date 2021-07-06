@@ -15,8 +15,7 @@ export class ModifyTeamComponent implements OnInit {
   team: Team = new Team();
   // @ts-ignore
   users: User[];
-  // @ts-ignore
-  participants: string[];
+  participants: string[] = [];
 
   constructor(
     private teamsService: TeamsService,
@@ -32,20 +31,34 @@ export class ModifyTeamComponent implements OnInit {
 
   getAllUsers() {
     this.usersService.getUsers().subscribe((data) => {
-      this.users = data;
+      this.users = data.filter((x) => x.accountType === 'Member');
     });
+  }
+
+  addRemoveParticipant(checked: boolean, participant: string) {
+    if (checked) {
+      this.participants.push(participant);
+    } else {
+      this.participants = this.participants.filter((x) => x !== participant);
+    }
+  }
+
+  isChecked(participant: string) {
+    return this.participants.findIndex((x) => x === participant) > -1;
   }
 
   getTeam() {
     this.activatedRoute.params.subscribe((data) => {
       this.teamsService.getTeam(data.id).subscribe((team) => {
         this.team = team;
+        this.participants = this.team.participants.split(',');
       });
     });
   }
 
   modifyTeam() {
-    this.teamsService.modifyTeam(this.team.name, this.participants).subscribe(
+    const participants = this.participants.join(',');
+    this.teamsService.modifyTeam(this.team.name, participants).subscribe(
       () => {
         this.toastrService.success('Team successfully modified');
       },

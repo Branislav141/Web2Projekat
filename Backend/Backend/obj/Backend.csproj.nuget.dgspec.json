@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj": {}
+    "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj": {
+    "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj",
-        "packagesPath": "C:\\Users\\Andrej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\obj\\",
+        "projectPath": "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\Backend.csproj",
+        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andrej\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,10 +29,9 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj": {
-                "projectPath": "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj"
+              "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj": {
+                "projectPath": "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj"
               }
             }
           }
@@ -45,7 +44,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -104,24 +102,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj": {
+    "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj",
         "projectName": "EmailService",
-        "projectPath": "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj",
-        "packagesPath": "C:\\Users\\Andrej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrej\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\obj\\",
+        "projectPath": "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\EmailService.csproj",
+        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Korisnik\\Downloads\\Web2Projekat-main\\Web2Projekat-main\\Backend\\EmailService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andrej\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -133,7 +131,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -145,7 +142,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "NETCore.MailKit": {
               "target": "Package",
@@ -167,7 +163,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
