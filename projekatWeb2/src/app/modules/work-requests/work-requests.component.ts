@@ -13,7 +13,7 @@ import {MatSort} from '@angular/material/sort';
   styleUrls: ['./work-requests.component.css'],
 })
 export class WorkRequestsComponent implements OnInit, AfterViewInit {
-  currentWorkRequest = 'mine';
+  currentWorkRequest = 'all';
   workRequests: WorkRequest[] = [];
   displayedColumns: string[] = ['id', 'startDate', 'phoneNumber', 'status', 'address'];
   // @ts-ignore
@@ -32,7 +32,7 @@ export class WorkRequestsComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.getMyWorkRequests();
+    this.getAllWorkRequests();
   }
 
   getAllWorkRequests() {
@@ -42,6 +42,7 @@ export class WorkRequestsComponent implements OnInit, AfterViewInit {
       .subscribe((data) => {
         this.workRequests = data;
         this.dataSource = new MatTableDataSource(data);
+        this.ngAfterViewInit();
       });
   }
 
@@ -52,6 +53,7 @@ export class WorkRequestsComponent implements OnInit, AfterViewInit {
       .subscribe((data) => {
         this.workRequests = data;
         this.dataSource = new MatTableDataSource(data);
+        this.ngAfterViewInit();
       });
   }
 
