@@ -1,0 +1,12 @@
+<h2>Choose equipment</h2>
+
+<ng-container *ngFor="let element of allElements">
+  <div>
+    <mat-checkbox class="example-margin mt-2" [checked]="isChecked(element)"
+                  (change)="addRemoveEquipment($event.checked, element)">{{element}}</mat-checkbox>
+  </div>
+</ng-container>
+
+<div>
+  <button class="mt-3" mat-raised-button color="primary" (click)="addEquipment()">Change</button>
+</div>
