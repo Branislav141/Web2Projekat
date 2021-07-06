@@ -15,7 +15,11 @@ export class WorkRequstService {
   constructor(private httpClient: HttpClient) {}
 
   getAllWorkRequestsForUser(email: string) {
-    return this.httpClient.get<WorkRequest[]>(this.baseUrl + 'all/' + email);
+    return this.httpClient.get<WorkRequest[]>(this.baseUrl + 'my/' + email);
+  }
+
+  getAllWorkRequest() {
+    return this.httpClient.get<WorkRequest[]>(this.baseUrl + 'all');
   }
 
   getWorkRequest(id: string) {

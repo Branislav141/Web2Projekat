@@ -35,6 +35,10 @@ import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.com
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NewWorkRequestComponent } from './modules/work-requests/new-work-request/new-work-request.component';
 import { PhotoTileComponent } from './modules/work-requests/work-request/multimedia-attachments/photo-tile/photo-tile.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatInputModule} from "@angular/material/input";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -73,6 +77,10 @@ import { PhotoTileComponent } from './modules/work-requests/work-request/multime
     FormsModule,
     MaterialModule,
     MatCheckboxModule,
+    MatTableModule,
+    MatInputModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   providers: [AuthGuard, NoAuthGuard, AdminGuard, NewTeamComponent],
   bootstrap: [AppComponent],

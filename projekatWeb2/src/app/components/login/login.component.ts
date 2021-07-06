@@ -28,14 +28,6 @@ export class LoginComponent {
       .subscribe(
         () => {
           const accountStatus = this.authService.currentUser.accountStatus;
-          if (accountStatus === 'Pending') {
-            this.authService.logOut();
-            this.toastr.warning(
-              'Pedning',
-              'Your account is still in pending state. Please wait to be approved'
-            );
-            return;
-          }
           if (accountStatus === 'Declined') {
             this.authService.logOut();
             this.toastr.warning('Error', 'Your account is declined');

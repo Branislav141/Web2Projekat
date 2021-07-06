@@ -92,7 +92,6 @@ const routes: Routes = [
       {
         path: 'work-request/:id',
         component: WorkRequestComponent,
-        canDeactivate: [PreventUnsavedChangesGuard],
       },
       {
         path: 'teams',
