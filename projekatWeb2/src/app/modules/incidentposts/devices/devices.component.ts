@@ -10,42 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./devices.component.css'],
 })
 export class DevicesComponent implements OnInit {
-  allIncidents: Array<Incident>;
-  sortedData: Array<Incident>;
-  p: number = 1;
-
-  constructor(private incService: IncidentService) {
-    this.allIncidents = this.incService.loadIncidents();
-    this.sortedData = this.allIncidents.slice();
-  }
-
-  sortData(sort: Sort) {
-    const data = this.allIncidents.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'id':
-          return compare(a.id, b.id, isAsc);
-        case 'Name':
-          return compare(a.Name, b.Name, isAsc);
-        case 'Type':
-          return compare(a.Type, b.Type, isAsc);
-        case 'Coordinates':
-          return compare(a.Coordinates, b.Coordinates, isAsc);
-        case 'Adress':
-          return compare(a.Adress, b.Adress, isAsc);
-        default:
-          return 0;
-      }
-    });
-  }
-
-  dataSource = new MatTableDataSource<Incident>();
+ 
   ngOnInit(): void {}
 }
 
