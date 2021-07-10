@@ -13,6 +13,7 @@ namespace Backend.Data
         public DbSet<Incident> Incidents { get; set; }
 
         public DbSet<ElementMreze> Elementi { get; set; }
+        public DbSet<SafetyDocuments> SafetyDocuments { get; set; }
 
         public DbSet<Team> Teams { get; set; }
     }
