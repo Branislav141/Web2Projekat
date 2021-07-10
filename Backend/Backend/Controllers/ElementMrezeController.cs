@@ -1,4 +1,5 @@
 ﻿using Backend.Data;
+using Backend.Dtos;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -30,6 +31,25 @@ namespace Backend.Controllers
             List<ElementMreze> inc = _dbContext.Elementi.ToList();
 
             return Ok(inc);
+        }
+
+        [HttpPost]
+        public IActionResult AddElement([FromBody] ElementsToAdd elmToAdd)
+        {
+            ElementMreze element = new ElementMreze();
+
+
+            element.Type = elmToAdd.Type;
+            element.Name = elmToAdd.Name;
+            element.Adress = elmToAdd.Adress;
+            element.Coordinates = elmToAdd.Coordinates;
+
+
+
+            _dbContext.Elementi.Add(element);
+            _dbContext.SaveChanges();
+
+            return Ok();
         }
 
 

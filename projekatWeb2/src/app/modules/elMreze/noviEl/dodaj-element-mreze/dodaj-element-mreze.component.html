@@ -1,1 +1,38 @@
-<p>dodaj-element-mreze works!</p>
+<div class="container">
+
+<h1 >Add new element</h1>
+    <div class="row">
+      <div class="col input-group mb-3"  >
+        <span class="input-group-text">Type:</span>
+        <select class="form-select" [(ngModel)]="element.Type">
+          <option value="Prekidac" selected>Prekidac</option>
+          <option value="Osigurac" selected>Osigurac</option>
+          <option value="Transformator" selected>Transformator</option>
+          <option value="Diskonektor" selected>Diskonektor</option>
+        
+        </select> 
+      </div>
+
+      
+      <div class="col input-group mb-3">
+        <span class="input-group-text">Name:</span>
+        <input type="text" class="form-control" [(ngModel)]="element.Name" />
+      </div>
+     
+
+    </div>
+
+    <div class="row">
+        <div class="col input-group mb-3">
+          <span class="input-group-text">Adress:</span>
+          <input type="text" class="form-control" [(ngModel)]="element.Adress" />
+        </div>
+      
+         <div class="col input-group mb-3">
+          <span class="input-group-text">Coordinats:</span>
+          <input type="text" class="form-control"  [(ngModel)]="element.Coordinates"/>
+        </div>
+      </div>
+    <button (click)="addElement()"  ><mat-icon >save</mat-icon> </button>
+    
+</div>
