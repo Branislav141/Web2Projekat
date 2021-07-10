@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend.Areas.Identity.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,5 +25,7 @@ namespace Backend.Models
         public int Calls { get; set; }
         public string Voltage { get; set; }
         public DateTime ScheduledTime { get; set; }
+
+
     }
 }

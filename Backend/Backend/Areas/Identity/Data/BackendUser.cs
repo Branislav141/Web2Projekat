@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Backend.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace Backend.Areas.Identity.Data
@@ -12,5 +14,7 @@ namespace Backend.Areas.Identity.Data
         public string Address { get; set; }
         public string AccountType { get; set; }
         public string AccountStatus { get; set; }
+
+
     }
 }

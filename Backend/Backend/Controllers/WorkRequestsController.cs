@@ -22,7 +22,15 @@ namespace Backend.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpGet("all/{email}")]
+        [HttpGet("all")]
+        public IActionResult getAllWorkRequests()
+        {
+            List<WorkRequest> workRequests = _dbContext.WorkRequests.ToList();
+
+            return Ok(workRequests);
+        }
+
+        [HttpGet("my/{email}")]
         public IActionResult GetAllWorkRequests(string email)
         {
             List<WorkRequest> workRequests = _dbContext.WorkRequests.Where(x => x.UserCreated == email).ToList();
