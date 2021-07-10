@@ -25,7 +25,8 @@ namespace Backend.Migrations.Data
                     AffectedCustommers = table.Column<int>(nullable: false),
                     Calls = table.Column<int>(nullable: false),
                     Voltage = table.Column<string>(nullable: true),
-                    ScheduledTime = table.Column<DateTime>(nullable: false)
+                    ScheduledTime = table.Column<DateTime>(nullable: false),
+                     UserCreated = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

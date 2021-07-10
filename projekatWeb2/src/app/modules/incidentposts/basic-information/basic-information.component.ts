@@ -13,7 +13,7 @@ import { IncidentService } from 'src/app/services/incservice/incident.service';
 })
 export class BasicInformationComponent implements OnInit {
   incident: IncidentToCreate=new IncidentToCreate();
- 
+  currentUser = '';
   constructor(
     private authService: AuthService,
     private activatedRoute: ActivatedRoute,
@@ -23,14 +23,14 @@ export class BasicInformationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-   
+    this.currentUser = this.authService.getUserEmail();
   }
   
 
 
 
   addIncident() {
-    
+    this.incident.userCreated = this.authService.getUserEmail();
     this.incService.createNewIncident(this.incident).subscribe(
       () => {
         this.tostr.success('Incident created successfully!');

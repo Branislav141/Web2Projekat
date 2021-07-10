@@ -26,6 +26,8 @@ namespace Backend.Models
         public string Voltage { get; set; }
         public DateTime ScheduledTime { get; set; }
 
+        public string UserCreated { get; set; }
+
 
     }
 }

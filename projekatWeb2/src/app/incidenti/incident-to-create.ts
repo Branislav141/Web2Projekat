@@ -13,7 +13,7 @@ export class IncidentToCreate {
     Calls:number;
     Voltage:string;
     ScheduledTime:Date;
-  
+    userCreated:string;
   
   
     constructor() {
@@ -31,6 +31,7 @@ export class IncidentToCreate {
       this.Calls=0;
       this.Voltage='';
       this.ScheduledTime=new Date();
+      this.userCreated = '';
   
     
     }

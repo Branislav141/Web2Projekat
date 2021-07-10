@@ -29,14 +29,14 @@ namespace Backend.Controllers
 
             return Ok(inc);
         }
-        //[HttpGet("my/{email}")]
-        //public IActionResult getMyIncidents()
-        //{
-        //    List<Incident> inc = _dbContext.Incidents.Where(x => x.).ToList();
 
-        //    return Ok(inc);
-        //}
+        [HttpGet("my/{email}")]
+        public IActionResult GetAllIncidents(string email)
+        {
+            List<Incident> incidents = _dbContext.Incidents.Where(x => x.UserCreated == email).ToList();
 
+            return Ok(incidents);
+        }
 
 
         [HttpPost]
@@ -58,6 +58,7 @@ namespace Backend.Controllers
             incident.Calls = incToAdd.Calls;
             incident.Voltage = incToAdd.Voltage;
             incident.ScheduledTime = incToAdd.ScheduledTime;
+            incident.UserCreated = incToAdd.UserCreated;
 
 
 

@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Incident } from 'src/app/incidenti/incident';
 import { IncidentService } from 'src/app/services/incservice/incident.service';
 import {MatSort} from '@angular/material/sort';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,8 +28,9 @@ export class MyIncidentsComponent implements OnInit,AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    
+    private authService: AuthService,
     private incService: IncidentService,
+    private router: Router
     
   ) {
   }
@@ -41,6 +44,17 @@ export class MyIncidentsComponent implements OnInit,AfterViewInit {
     this.currentIncident = 'all';
     this.incService
       .getAllIncidents()
+      .subscribe((data) => {
+        this.incidents = data;
+        this.dataSource = new MatTableDataSource(data);
+        this.ngAfterViewInit();
+      });
+  }
+
+  getMyIncidents() {
+    this.currentIncident = 'mine';
+    this.incService
+      .getAllIncidentsForUser(this.authService.currentUser.email)
       .subscribe((data) => {
         this.incidents = data;
         this.dataSource = new MatTableDataSource(data);
@@ -64,6 +78,7 @@ export class MyIncidentsComponent implements OnInit,AfterViewInit {
     }
   }
 
+ 
   
 
  

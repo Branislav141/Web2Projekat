@@ -13,6 +13,7 @@ export class Incident {
   Calls:number;
   Voltage:string;
   ScheduledTime:Date;
+  userCreated: string;
 
 
 
@@ -31,6 +32,7 @@ export class Incident {
     this.Calls=0;
     this.Voltage='';
     this.ScheduledTime=new Date();
+    this.userCreated = '';
 
   
   }
