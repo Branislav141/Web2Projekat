@@ -1,21 +1,10 @@
-<div class="row">
-  <div class="col input-group mb-3">
-    <span class="input-group-text">Incident ID:</span>
-    <input type="text" class="form-control" />
-    
-  </div>
-  <div class="col input-group mb-3">
-    <span class="input-group-text">Affected customers:</span>
-    <input type="text" class="form-control" />
-    
-  </div>
-</div>
+<div class="container">
 
 
 <div class="row">
-  <div class="col input-group mb-3">
+  <div class="col input-group mb-3"  >
     <span class="input-group-text">Type:</span>
-    <select class="form-select">
+    <select class="form-select" [(ngModel)]="incident.Type">
       <option value="planned_work" selected>Planned Work</option>
       <option value="not_a_planned_work" selected>Not a Planned Work</option>
     
@@ -24,16 +13,16 @@
 
   <div class="col input-group mb-3">
     <span class="input-group-text">Outage time:</span>
-    <input type="date" class="form-control" />
+    <input type="date" class="form-control" [(ngModel)]="incident.OutageTime" />
   </div>
 
 </div>
 
 
 <div class="row">
-  <div class="col input-group mb-3">
+  <div class="col input-group mb-3"  >
     <span class="input-group-text">Priority:</span>
-    <select class="form-select">
+    <select class="form-select" [(ngModel)]="incident.Priority">
       <option value="incident1" selected> 1</option>
       <option value="incident2"> 2</option>
       <option value="incident2"> 3</option>
@@ -41,7 +30,7 @@
   </div>
   <div class="col input-group mb-3">
     <span class="input-group-text">ETR:</span>
-    <input type="date" class="form-control" />
+    <input type="date" class="form-control" [(ngModel)]="incident.ETR" />
   </div>
 </div>
 
@@ -49,7 +38,7 @@
 <div class="row">
   <div class="col input-group mb-3">
     <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="incident.Confirmed" >
       <label class="form-check-label" for="flexSwitchCheckDefault">Confirmed:</label>
     </div>
   </div>
@@ -57,20 +46,20 @@
 
   <div class="col input-group mb-3">
     <span class="input-group-text">Calls:</span>
-    <input type="text" class="form-control" />
+    <input type="number" class="form-control"  [(ngModel)]="incident.Calls" />
   </div>
 </div>
 
 
 <div class="row">
   <div class="col input-group mb-3">
-    <span class="input-group-text">Stauts:</span>
-    <input type="text" class="form-control" />
+    <span class="input-group-text">Status:</span>
+    <input type="text" class="form-control" [(ngModel)]="incident.Status" />
   </div>
 
    <div class="col input-group mb-3">
     <span class="input-group-text">Voltage[kV]:</span>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [(ngModel)]="incident.Voltage" />
   </div>
 </div>
 
@@ -78,7 +67,7 @@
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Description:</span>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [(ngModel)]="incident.Description"  />
   </div>
 </div>
 
@@ -86,20 +75,30 @@
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">ETA:</span>
-    <input type="date" class="form-control" />
+    <input type="date" class="form-control" [(ngModel)]="incident.ETA" />
   </div>
 
   <div class="col input-group mb-3">
     <span class="input-group-text">Scheduled time:</span>
-    <input type="date" class="form-control" />
+    <input type="date" class="form-control" [(ngModel)]="incident.ScheduledTime"  />
   </div>
 </div>
 
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">ATA:</span>
-    <input type="date" class="form-control" />
+    <input type="date" class="form-control" [(ngModel)]="incident.ATA" />
+  </div>
+
+  <div class="col input-group mb-3">
+    <span class="input-group-text">Affected customers:</span>
+    <input type="number" class="form-control" [(ngModel)]="incident.AffectedCustommers" />
+    
   </div>
 </div>
 
 
+<button (click)="addIncident()"  ><mat-icon >save</mat-icon> </button>
+
+
+</div>

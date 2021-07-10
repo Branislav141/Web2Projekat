@@ -25,6 +25,8 @@ import { NewTeamComponent } from './modules/teams/new-team/new-team.component';
 import { ModifyTeamComponent } from './modules/teams/modify-team/modify-team.component';
 import { NewWorkRequestComponent } from './modules/work-requests/new-work-request/new-work-request.component';
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes-guard';
+import { ElementiMrezeComponent } from './modules/elMreze/elementi-mreze/elementi-mreze.component';
+import { DodajElementMrezeComponent } from './modules/elMreze/noviEl/dodaj-element-mreze/dodaj-element-mreze.component';
 
 const routes: Routes = [
   {
@@ -62,9 +64,19 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
+        path: 'elementiMreze',
+        component: ElementiMrezeComponent,
+      },
+      {
+        path: 'dodajElMreze',
+        component: DodajElementMrezeComponent,
+      },
+      {
         path: 'posts',
         component: PostsComponent,
       },
+
+      
       {
         path: 'calls',
         component: CallsComponent,

@@ -47,7 +47,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost("equipment")]
-        public IActionResult UpdateEquipment([FromBody]EquipmentToAdd equipment)
+        public IActionResult UpdateEquipment([FromBody] EquipmentToAdd equipment)
         {
             WorkRequest workRequest = _dbContext.WorkRequests.Where(x => x.Id == equipment.Id).FirstOrDefault();
             workRequest.Equipment = equipment.Equipment;

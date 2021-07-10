@@ -1,35 +1,47 @@
+import { OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
+import { Incident } from '../incidenti/incident';
+import { IncidentService } from '../services/incservice/incident.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardService {
-  constructor() {}
+export class DashboardService implements OnInit {
+  incidents: Incident[] = [];
+  constructor(private incService: IncidentService,) {}
 
   bigChart() {
     return [
       {
-        name: 'Asia',
-        data: [502, 635, 809, 947, 1402, 3634, 5268],
+        name: 'Planed',
+        data: [],
       },
       {
-        name: 'Africa',
+        name: 'Un planed',
         data: [106, 107, 111, 133, 221, 767, 1766],
       },
-      {
-        name: 'Europe',
-        data: [163, 203, 276, 408, 547, 729, 628],
-      },
-      {
-        name: 'America',
-        data: [18, 31, 54, 156, 339, 818, 1201],
-      },
-      {
-        name: 'Oceania',
-        data: [2, 2, 2, 6, 13, 30, 46],
-      },
+    
     ];
   }
+
+  
+    ngOnInit(): void {
+    this.getAllPlanedIncidents();
+  
+  }
+  
+  getAllPlanedIncidents() {
+
+    this.incService
+      .getAllIncidents()
+      .subscribe((data) => {
+        this.incidents = data;
+        
+      });
+  }
+  
+
+  
 
   pieChart() {
     return [
@@ -74,3 +86,4 @@ export class DashboardService {
     ];
   }
 }
+

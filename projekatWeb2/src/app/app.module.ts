@@ -59,6 +59,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     ModifyTeamComponent,
     NewWorkRequestComponent,
     PhotoTileComponent,
+ 
   ],
   imports: [
     BrowserModule,

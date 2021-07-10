@@ -22,11 +22,11 @@ export class NewWorkRequestComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.currentUser = this.authService.getUserEmail();
+    //this.currentUser = this.authService.getUserEmail();
   }
 
   addWorkRequest() {
-    this.workRequest.userCreated = this.authService.getUserEmail();
+   // this.workRequest.userCreated = this.authService.getUserEmail();
     this.workRequestService.createWorkRequest(this.workRequest).subscribe(
       () => {
         this.tostr.success('Work request created successfully!');

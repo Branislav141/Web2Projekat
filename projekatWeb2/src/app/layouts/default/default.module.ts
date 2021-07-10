@@ -33,6 +33,15 @@ import { InstructionsComponent } from 'src/app/modules/safetycompinf/instruction
 import { NewsafetydocumentComponent } from 'src/app/modules/newsafetydocument/newsafetydocument.component';
 import { BscinformationComponent } from 'src/app/modules/safetycompinf/bscinformation/bscinformation.component';
 import { ChecklistComponent } from 'src/app/modules/safetycompinf/checklist/checklist.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from "@angular/material/input";
+import { ToastrModule } from 'ngx-toastr';
+import { ElementiMrezeComponent } from 'src/app/modules/elMreze/elementi-mreze/elementi-mreze.component';
+import { DodajElementMrezeComponent } from 'src/app/modules/elMreze/noviEl/dodaj-element-mreze/dodaj-element-mreze.component';
+
+
 
 @NgModule({
   declarations: [
@@ -52,14 +61,18 @@ import { ChecklistComponent } from 'src/app/modules/safetycompinf/checklist/chec
     InstructionsComponent,
     NewsafetydocumentComponent,
     ChecklistComponent,
+    ElementiMrezeComponent,
+    DodajElementMrezeComponent,
   ],
   imports: [
     CommonModule,
+    ToastrModule.forRoot(),
     RouterModule,
     SharedModule,
     MatSidenavModule,
     MatDividerModule,
     FlexLayoutModule,
+    NgbModule,
     MatCardModule,
     MatPaginatorModule,
     MatTableModule,
@@ -70,6 +83,9 @@ import { ChecklistComponent } from 'src/app/modules/safetycompinf/checklist/chec
     MatSelectModule,
     MatSortModule,
     NgxPaginationModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBGogLjzAuxXfkXYupVuzPfWklpTU2lBIE',
     }),

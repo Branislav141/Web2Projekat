@@ -19,11 +19,9 @@ export class AreaComponent implements OnInit {
         type: 'area',
       },
       title: {
-        text: 'Random DATA',
+        text: 'INCIDENTS',
       },
-      subtitle: {
-        text: 'Demo',
-      },
+      
 
       tooltip: {
         split: true,

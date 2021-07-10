@@ -2,7 +2,7 @@ export class Incident {
   id: number;
   Type: string;
   Priority:string;
-  Confirmed:string;
+  Confirmed:boolean;
   Status:string;
   ETA:Date;
   Description:string;
@@ -20,7 +20,7 @@ export class Incident {
     this.id = 0;
     this.Type = '';
     this.Priority='';
-    this.Confirmed='';
+    this.Confirmed=false;
     this.Status='';
     this.ETA=new Date();
     this.Description='';
