@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import {MatSort} from '@angular/material/sort';
 import { SafetyDocuments } from 'src/app/SafetyDoc/safety-documents';
 import { SafetyDocumentsService } from 'src/app/services/SafetyD/safety-documents.service';
+import { Router } from '@angular/router';
 
 
 
@@ -19,7 +20,7 @@ import { SafetyDocumentsService } from 'src/app/services/SafetyD/safety-document
 export class SafetydocumentsComponent implements OnInit,AfterViewInit {
   currentDocument = 'all';
     safetyDoc: SafetyDocuments[] = [];
-    displayedColumns: string[] = ['id','Type','Plan','Status','CreatedBy','FiledCrew','Details','Notes','PhoneNo','CreationDate'];
+    displayedColumns: string[] = ['id','type','plan','status','createdBy','filedCrew','details','notes','phoneNo','creationDate'];
     // @ts-ignore
     dataSource: MatTableDataSource<SafetyDocuments>;
   
@@ -31,7 +32,7 @@ export class SafetydocumentsComponent implements OnInit,AfterViewInit {
     constructor(
       private authService: AuthService,
       private safetyDocService: SafetyDocumentsService,
-      
+      private router: Router
     ) {
     }
   
@@ -51,6 +52,16 @@ export class SafetydocumentsComponent implements OnInit,AfterViewInit {
         });
     }
   
+    getMyDoc() {
+      this.currentDocument = 'mine';
+      this.safetyDocService
+        .getDocumentsForUser(this.authService.currentUser.email)
+        .subscribe((data) => {
+          this.safetyDoc = data;
+          this.dataSource = new MatTableDataSource(data);
+          this.ngAfterViewInit();
+        });
+    }
  
   
     ngAfterViewInit() {
@@ -69,6 +80,10 @@ export class SafetydocumentsComponent implements OnInit,AfterViewInit {
       }
     }
   
+
+    goToDocPosts(id: number) {
+      this.router.navigate(['default/newSafeDoc/' + id]);
+    }
     
   
    

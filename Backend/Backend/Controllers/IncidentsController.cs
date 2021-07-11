@@ -39,6 +39,15 @@ namespace Backend.Controllers
         }
 
 
+        [HttpGet("{id}")]
+        public IActionResult GetIncident(int id)
+        {
+            Incident incident = _dbContext.Incidents.Where(x => x.id == id).FirstOrDefault();
+
+            return Ok(incident);
+        }
+
+
         [HttpPost]
         public IActionResult AddIncident([FromBody] IncidentsToAdd incToAdd)
         {
@@ -69,34 +78,35 @@ namespace Backend.Controllers
         }
 
 
-        //[HttpPost("modify/{id}")]
-        //public IActionResult ModifyIncident(int id, [FromBody] IncidentToModify incidentToModify)
-        //{
-        //    Incident incident = _dbContext.Incidents.Where(x => x.id == id).FirstOrDefault();
+        [HttpPost("modify/{id}")]
+        public IActionResult ModifyIncident(int id, [FromBody] IncidentToModify incidentToModify)
+        {
+            Incident incident = _dbContext.Incidents.Where(x => x.id == id).FirstOrDefault();
 
 
 
-        //    incident.id = incidentToModify.id;
-        //    incident.Type = incidentToModify.Type;
-        //    incident.Priority = incidentToModify.Priority;
-        //    incident.Confirmed = incidentToModify.Confirmed;
-        //    incident.Status = incidentToModify.Status;
-        //    incident.ETA = incidentToModify.ETA;
-        //    incident.Description = incidentToModify.Description;
-        //    incident.ATA = incidentToModify.ATA;
-        //    incident.OutageTime = incidentToModify.OutageTime;
-        //    incident.ETR = incidentToModify.ETR;
-        //    incident.AffectedCustommers = incidentToModify.AffectedCustommers;
-        //    incident.Calls = incidentToModify.Calls;
-        //    incident.Voltage = incidentToModify.Voltage;
-        //    incident.ScheduledTime = incidentToModify.ScheduledTime;
+            incident.id = incidentToModify.id;
+            incident.Type = incidentToModify.Type;
+            incident.Priority = incidentToModify.Priority;
+            incident.Confirmed = incidentToModify.Confirmed;
+            incident.Status = incidentToModify.Status;
+            incident.ETA = incidentToModify.ETA;
+            incident.Description = incidentToModify.Description;
+            incident.ATA = incidentToModify.ATA;
+            incident.OutageTime = incidentToModify.OutageTime;
+            incident.ETR = incidentToModify.ETR;
+            incident.AffectedCustommers = incidentToModify.AffectedCustommers;
+            incident.Calls = incidentToModify.Calls;
+            incident.Voltage = incidentToModify.Voltage;
+            incident.ScheduledTime = incidentToModify.ScheduledTime;
+            incident.UserCreated = incidentToModify.UserCreated;
 
 
-          
 
-        //    _dbContext.SaveChanges();
 
-        //    return Ok();
-        //}
+            _dbContext.SaveChanges();
+
+            return Ok();
+        }
     }
 }

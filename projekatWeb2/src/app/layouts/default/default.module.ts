@@ -30,7 +30,6 @@ import { SafetydocumentsComponent } from 'src/app/modules/safetydocuments/safety
 import { HistoryComponent } from 'src/app/modules/safetycompinf/history/history.component';
 import { MultimediaComponent } from 'src/app/modules/safetycompinf/multimedia/multimedia.component';
 import { InstructionsComponent } from 'src/app/modules/safetycompinf/instructions/instructions.component';
-import { NewsafetydocumentComponent } from 'src/app/modules/newsafetydocument/newsafetydocument.component';
 import { BscinformationComponent } from 'src/app/modules/safetycompinf/bscinformation/bscinformation.component';
 import { ChecklistComponent } from 'src/app/modules/safetycompinf/checklist/checklist.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -40,6 +39,13 @@ import {MatInputModule} from "@angular/material/input";
 import { ToastrModule } from 'ngx-toastr';
 import { ElementiMrezeComponent } from 'src/app/modules/elMreze/elementi-mreze/elementi-mreze.component';
 import { DodajElementMrezeComponent } from 'src/app/modules/elMreze/noviEl/dodaj-element-mreze/dodaj-element-mreze.component';
+import { CreatenewincidentComponent } from 'src/app/modules/createIncidet/createnewincident/createnewincident.component';
+import { NewsafetydocumentComponent } from 'src/app/modules/newsafetyDoc/newsafetydocument/newsafetydocument.component';
+import { NewSafeDocComponent } from 'src/app/modules/safetycompinf/new-safe-doc/new-safe-doc.component';
+import {MatButtonModule} from '@angular/material/button';
+
+
+
 
 
 
@@ -63,6 +69,10 @@ import { DodajElementMrezeComponent } from 'src/app/modules/elMreze/noviEl/dodaj
     ChecklistComponent,
     ElementiMrezeComponent,
     DodajElementMrezeComponent,
+    CreatenewincidentComponent,
+    NewSafeDocComponent,
+
+    
   ],
   imports: [
     CommonModule,
@@ -85,6 +95,7 @@ import { DodajElementMrezeComponent } from 'src/app/modules/elMreze/noviEl/dodaj
     NgxPaginationModule,
     FormsModule,
     MatFormFieldModule,
+    MatButtonModule,
     MatInputModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBGogLjzAuxXfkXYupVuzPfWklpTU2lBIE',
@@ -92,5 +103,7 @@ import { DodajElementMrezeComponent } from 'src/app/modules/elMreze/noviEl/dodaj
   ],
 
   providers: [DashboardService],
+  
+  
 })
 export class DefaultModule {}

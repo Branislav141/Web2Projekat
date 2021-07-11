@@ -8,7 +8,6 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { CallsComponent } from './modules/incidentposts/calls/calls.component';
 import { MyIncidentsComponent } from './modules/my-incidents/my-incidents.component';
 import { NewIncidentComponent } from './modules/new-incident/new-incident.component';
-import { NewsafetydocumentComponent } from './modules/newsafetydocument/newsafetydocument.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import { SafetydocumentsComponent } from './modules/safetydocuments/safetydocuments.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -27,6 +26,9 @@ import { NewWorkRequestComponent } from './modules/work-requests/new-work-reques
 import { PreventUnsavedChangesGuard } from './guards/prevent-unsaved-changes-guard';
 import { ElementiMrezeComponent } from './modules/elMreze/elementi-mreze/elementi-mreze.component';
 import { DodajElementMrezeComponent } from './modules/elMreze/noviEl/dodaj-element-mreze/dodaj-element-mreze.component';
+import { CreatenewincidentComponent } from './modules/createIncidet/createnewincident/createnewincident.component';
+import { NewsafetydocumentComponent } from './modules/newsafetyDoc/newsafetydocument/newsafetydocument.component';
+import { NewSafeDocComponent } from './modules/safetycompinf/new-safe-doc/new-safe-doc.component';
 
 const routes: Routes = [
   {
@@ -87,6 +89,21 @@ const routes: Routes = [
       },
       {
         path: 'newIncidents',
+        component: CreatenewincidentComponent,
+      },
+      {
+        path: 'newSafeDoc',
+        component: NewSafeDocComponent,
+      },
+      {
+        path: 'newSafeDoc/:id',
+        component: NewSafeDocComponent,
+      },
+    
+
+      
+      {
+        path: 'novi/:id',
         component: NewIncidentComponent,
       },
       {

@@ -40,6 +40,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     ModifyTeamComponent,
     NewWorkRequestComponent,
     PhotoTileComponent,
+    
+  
+   
  
   ],
   imports: [

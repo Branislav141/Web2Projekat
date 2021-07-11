@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Backend.Models
+namespace Backend.Dtos
 {
-    public class SafetyDocuments
+    public class SafetyDocumentsToModify
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public string Type { get; set; }
         public string Plan { get; set; }
         public string Status { get; set; }

@@ -18,7 +18,7 @@ export class MyIncidentsComponent implements OnInit,AfterViewInit {
  
   currentIncident = 'all';
   incidents: Incident[] = [];
-  displayedColumns: string[] = ['id','Type','Priority','Confirmed','Status','ETA','Description','ATA','OutageTime','ETR','AffectedCustommers','Calls','Voltage','ScheduledTime'];
+  displayedColumns: string[] = ['id','type','priority','confirmed','status','eta','description','ata','outageTime','etr','affectedCustommers','calls','voltage','scheduledTime'];
   // @ts-ignore
   dataSource: MatTableDataSource<Incident>;
 
@@ -76,6 +76,10 @@ export class MyIncidentsComponent implements OnInit,AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  goToIncPosts(id: number) {
+    this.router.navigate(['default/novi/' + id]);
   }
 
  

@@ -1,22 +1,25 @@
 <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="20px">
   <div fxFlex="20">
-    <mat-action-list>
-      <button mat-list-item (click)="toggleBasic()">Basic Information</button>
-      <button mat-list-item (click)="toggleDevices()">Devices</button>
-      <button mat-list-item (click)="toggleResolution()">Resolution</button>
-      <button mat-list-item (click)="toggleCalls()">Calls</button>
+    <mat-action-list style="border: 1px solid grey">
+      <ng-container *ngFor="let menuItem of menuItems">
+        <button mat-list-item (click)="setActiveComponent(menuItem.route)">
+          {{ menuItem.title }}
+        </button>
+      </ng-container>
     </mat-action-list>
   </div>
   <div fxFlex="100">
-    <app-basic-information *ngIf="showMe"></app-basic-information>
-    <app-devices *ngIf="showMe1"></app-devices>
-    <app-resolution *ngIf="showMe2"></app-resolution>
-    <app-calls *ngIf="showMe3"></app-calls>
+    <app-basic-information
+      *ngIf="activeComponent === 'basic-information'"
+    ></app-basic-information>
+    <app-devices
+      *ngIf="activeComponent === 'devices'"
+    ></app-devices>
+    <app-resolution
+      *ngIf="activeComponent === 'resolution'"
+    ></app-resolution>
+    <app-calls *ngIf="activeComponent === 'calls'"></app-calls>
   </div>
 </div>
-<br />
-<mat-divider></mat-divider>
-<div fxLayout="row" fxLayoutAlign="end">
-  <a routerLink="/default/myIncidents"><mat-icon>cancel</mat-icon> </a>
- 
-</div>
+
+

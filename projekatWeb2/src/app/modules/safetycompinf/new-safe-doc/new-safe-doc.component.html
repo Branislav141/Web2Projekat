@@ -1,0 +1,26 @@
+<div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="20px">
+    <div fxFlex="20">
+      <mat-action-list style="border: 1px solid grey">
+        <ng-container *ngFor="let menuItem of menuItems">
+          <button mat-list-item (click)="setActiveComponent(menuItem.route)">
+            {{ menuItem.title }}
+          </button>
+        </ng-container>
+      </mat-action-list>
+    </div>
+    <div fxFlex="100">
+      <app-bscinformation
+        *ngIf="activeComponent === 'bscinformation'"
+      ></app-bscinformation>
+      <app-checklist
+        *ngIf="activeComponent === 'checklist'"
+      ></app-checklist>
+      <app-history
+        *ngIf="activeComponent === 'history'"
+      ></app-history>
+      <app-instructions *ngIf="activeComponent === 'instructions'"></app-instructions>
+    </div>
+  </div>
+  
+  
+  

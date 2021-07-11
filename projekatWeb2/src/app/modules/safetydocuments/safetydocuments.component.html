@@ -1,7 +1,7 @@
 <div class="container">
   <button type="button" class="btn btn-secondary" routerLink="/default/newsafetydoc">New</button>
   <button type="button" [disabled]="currentDocument === 'mine'" class="btn btn-secondary"
-          (click)="getAllDoc()" style="margin-left: 200px">Mine
+          (click)="getMyDoc()" style="margin-left: 200px">Mine
   </button>
   <button type="button" [disabled]="currentDocument === 'all'" class="btn btn-secondary"
           (click)="getAllDoc()">All
@@ -21,49 +21,49 @@
 
           <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
-            <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+            <td class="link" (click)="goToDocPosts(row.id)" mat-cell *matCellDef="let row"> {{ row.id }} </td>
           </ng-container>
-          <ng-container matColumnDef="Type">
+          <ng-container matColumnDef="type">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
             <td mat-cell *matCellDef="let row"> {{ row.type }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Plan">
+          <ng-container matColumnDef="plan">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Plan</th>
             <td mat-cell *matCellDef="let row"> {{ row.plan }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Status">
+          <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Status</th>
             <td mat-cell *matCellDef="let row"> {{ row.status }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="CreatedBy">
+          <ng-container matColumnDef="createdBy">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> CreatedBy</th>
             <td mat-cell *matCellDef="let row"> {{ row.createdBy }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="FiledCrew">
+          <ng-container matColumnDef="filedCrew">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> FiledCrew</th>
             <td mat-cell *matCellDef="let row"> {{ row.filedCrew }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Details">
+          <ng-container matColumnDef="details">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Details</th>
             <td mat-cell *matCellDef="let row"> {{ row.details }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Notes">
+          <ng-container matColumnDef="notes">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Notes</th>
             <td mat-cell *matCellDef="let row"> {{ row.notes }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="PhoneNo">
+          <ng-container matColumnDef="phoneNo">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> PhoneNo</th>
             <td mat-cell *matCellDef="let row"> {{ row.phoneNo }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="CreationDate">
+          <ng-container matColumnDef="creationDate">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> CreationDate</th>
             <td mat-cell *matCellDef="let row"> {{ row.creationDate }} </td>
           </ng-container>

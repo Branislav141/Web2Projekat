@@ -15,7 +15,7 @@ namespace Backend.Migrations.Data
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Type = table.Column<string>(nullable: true),
                     Plan = table.Column<string>(nullable: true),
-                    Status = table.Column<bool>(nullable: false),
+                    Status = table.Column<string>(nullable: false),
                     CreatedBy = table.Column<string>(nullable: true),
                     FiledCrew = table.Column<string>(nullable: true),
                     Details = table.Column<string>(nullable: true),

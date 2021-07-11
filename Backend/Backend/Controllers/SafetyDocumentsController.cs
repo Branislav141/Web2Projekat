@@ -1,4 +1,5 @@
 ﻿using Backend.Data;
+using Backend.Dtos;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,34 +25,70 @@ namespace Backend.Controllers
 
 
         [HttpGet]
-        public IActionResult getAllElements()
+        public IActionResult getSafetyDocuments()
         {
             List<SafetyDocuments> inc = _dbContext.SafetyDocuments.ToList();
 
             return Ok(inc);
         }
 
-        //[HttpPost]
-        //public IActionResult AddElement([FromBody] ElementsToAdd elmToAdd)
-        //{
-        //    ElementMreze element = new ElementMreze();
+
+        [HttpGet("{id}")]
+        public IActionResult GetSafetyDoc(int id)
+        {
+            SafetyDocuments doc = _dbContext.SafetyDocuments.Where(x => x.Id == id).FirstOrDefault();
+
+            return Ok(doc);
+        }
+
+        [HttpPost]
+        public IActionResult AddSafetyDocument([FromBody] SafetyDocumentsToAdd SftDAdd)
+        {
+            SafetyDocuments document = new SafetyDocuments();
 
 
-        //    element.Type = elmToAdd.Type;
-        //    element.Name = elmToAdd.Name;
-        //    element.Adress = elmToAdd.Adress;
-        //    element.Coordinates = elmToAdd.Coordinates;
+            document.Type = SftDAdd.Type;
+            document.Plan = SftDAdd.Plan;
+            document.Status = SftDAdd.Status;
+            document.CreatedBy = SftDAdd.CreatedBy;
+            document.FiledCrew = SftDAdd.FiledCrew;
+            document.Details = SftDAdd.Details;
+            document.Notes = SftDAdd.Notes;
+            document.PhoneNo = SftDAdd.PhoneNo;
+            document.CreationDate = SftDAdd.CreationDate;
+
+         
 
 
 
-        //    _dbContext.Elementi.Add(element);
-        //    _dbContext.SaveChanges();
+            _dbContext.SafetyDocuments.Add(document);
+            _dbContext.SaveChanges();
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
+
+        [HttpPost("modify/{id}")]
+        public IActionResult ModifyDocument(int id, [FromBody] SafetyDocumentsToModify docToModify)
+        {
+            SafetyDocuments document = _dbContext.SafetyDocuments.Where(x => x.Id == id).FirstOrDefault();
+
+            document.Type = docToModify.Type;
+            document.Plan = docToModify.Plan;
+            document.Status = docToModify.Status;
+            document.CreatedBy = docToModify.CreatedBy;
+            document.FiledCrew = docToModify.FiledCrew;
+            document.Details = docToModify.Details;
+            document.Notes = docToModify.Notes;
+            document.PhoneNo = docToModify.PhoneNo;
+            document.CreationDate = docToModify.CreationDate;
+
+            _dbContext.SaveChanges();
+
+            return Ok();
+        }
 
 
 
 
     }
-    }
+}

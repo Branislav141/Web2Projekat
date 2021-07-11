@@ -23,25 +23,32 @@ export class BasicInformationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.currentUser = this.authService.getUserEmail();
+    this.activatedRoute.params.subscribe((data) => {
+      this.loadIncidents(data.id);
+    });
   }
   
 
 
 
-  addIncident() {
-    this.incident.userCreated = this.authService.getUserEmail();
-    this.incService.createNewIncident(this.incident).subscribe(
-      () => {
-        this.tostr.success('Incident created successfully!');
-        this.router.navigate(['default/myIncidents']);
-      },
-      () => {
-        this.tostr.error('There was an error creating incident');
-      }
-    );
+  loadIncidents(id: string) {
+    this.incService.getIncidents(id).subscribe((data) => {
+      this.incident = data;
+    });
   }
 
+  modifyInc() {
+    this.incService
+      .modifyIncident(this.incident.id.toString(), this.incident)
+      .subscribe(
+        () => {
+          this.tostr.success('Incident successfully modified');
+        },
+        () => {
+          this.tostr.error('There was an error modifying incident');
+        }
+      );
+  }
   
 
 

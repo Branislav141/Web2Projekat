@@ -21,5 +21,6 @@ namespace Backend.Dtos
         public int Calls { get; set; }
         public string Voltage { get; set; }
         public DateTime ScheduledTime { get; set; }
+        public string UserCreated { get; set; }
     }
 }

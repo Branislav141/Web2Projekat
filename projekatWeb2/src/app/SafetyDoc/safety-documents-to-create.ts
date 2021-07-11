@@ -1,5 +1,5 @@
-export class SafetyDocuments {
-    id:number;
+export class SafetyDocumentsToCreate {
+   
     Type:string;
     Plan:string;
     Status:string;
@@ -11,7 +11,7 @@ export class SafetyDocuments {
     CreationDate:Date;
 
     constructor(){
-        this.id=0;
+   
         this.Type='';
         this.Plan='';
         this.Status='Draft';

@@ -1,21 +1,21 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 @Component({
-  selector: 'app-new-incident',
-  templateUrl: './new-incident.component.html',
-  styleUrls: ['./new-incident.component.css'],
+  selector: 'app-new-safe-doc',
+  templateUrl: './new-safe-doc.component.html',
+  styleUrls: ['./new-safe-doc.component.css']
 })
-export class NewIncidentComponent {
+export class NewSafeDocComponent  {
   constructor() {}
-  activeComponent = 'basic-information';
+  activeComponent = 'bscinformation';
   // @ts-ignore
   @ViewChild('form', { static: false }) form: NgForm;
 
   menuItems = [
-    { title: 'basic-information', route: 'basic-information' },
-    { title: 'devices', route: 'devices' },
-    { title: 'resolution', route: 'resolution' },
-    { title: 'calls', route: 'calls' },
+    { title: 'Basic Information', route: 'bscinformation' },
+    { title: 'checklist', route: 'checklist' },
+    { title: 'history', route: 'history' },
+    { title: 'instructions', route: 'instructions' },
   ];
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {

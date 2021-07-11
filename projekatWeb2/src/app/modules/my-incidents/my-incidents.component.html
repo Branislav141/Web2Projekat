@@ -21,66 +21,66 @@
 
           <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
-            <td mat-cell *matCellDef="let row"> {{ row.id }} </td>
+            <td class="link" (click)="goToIncPosts(row.id)" mat-cell *matCellDef="let row"> {{ row.id }} </td>
           </ng-container>
-          <ng-container matColumnDef="Type">
+          <ng-container matColumnDef="type">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
             <td mat-cell *matCellDef="let row"> {{ row.type }} </td>
           </ng-container>
-          <ng-container matColumnDef="Priority">
+          <ng-container matColumnDef="priority">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Priority</th>
             <td mat-cell *matCellDef="let row"> {{ row.priority }} </td>
           </ng-container>
-          <ng-container matColumnDef="Confirmed">
+          <ng-container matColumnDef="confirmed">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Confirmed</th>
             <td mat-cell *matCellDef="let row"> {{ row.confirmed }} </td>
           </ng-container>
-          <ng-container matColumnDef="Status">
+          <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Status</th>
             <td mat-cell *matCellDef="let row"> {{ row.status }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="ETA">
+          <ng-container matColumnDef="eta">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ETA</th>
             <td mat-cell *matCellDef="let row"> {{ row.eta }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Description">
+          <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Description</th>
             <td mat-cell *matCellDef="let row"> {{ row.description }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="ATA">
+          <ng-container matColumnDef="ata">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ATA</th>
             <td mat-cell *matCellDef="let row"> {{ row.ata }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="OutageTime">
+          <ng-container matColumnDef="outageTime">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> OutageTime</th>
             <td mat-cell *matCellDef="let row"> {{ row.outageTime }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="ETR">
+          <ng-container matColumnDef="etr">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ETR</th>
             <td mat-cell *matCellDef="let row"> {{ row.etr }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="AffectedCustommers">
+          <ng-container matColumnDef="affectedCustommers">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> AffectedCustommers</th>
             <td mat-cell *matCellDef="let row"> {{ row.affectedCustommers }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Calls">
+          <ng-container matColumnDef="calls">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Calls</th>
             <td mat-cell *matCellDef="let row"> {{ row.calls }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Voltage">
+          <ng-container matColumnDef="voltage">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Voltage</th>
             <td mat-cell *matCellDef="let row"> {{ row.voltage }} </td>
           </ng-container>
 
-          <ng-container matColumnDef="ScheduledTime">
+          <ng-container matColumnDef="scheduledTime">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> ScheduledTime</th>
             <td mat-cell *matCellDef="let row"> {{ row.scheduledTime }} </td>
           </ng-container>
