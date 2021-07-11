@@ -20,7 +20,7 @@ export class ElementiMrezeComponent implements OnInit,AfterViewInit {
  
     currentElement = 'all';
     elementi: ElementMreze[] = [];
-    displayedColumns: string[] = ['id','Type','Name','Adress','Coordinates'];
+    displayedColumns: string[] = ['id','type','name','adress','coordinates'];
     // @ts-ignore
     dataSource: MatTableDataSource<ElementMreze>;
   
@@ -45,6 +45,17 @@ export class ElementiMrezeComponent implements OnInit,AfterViewInit {
       this.currentElement = 'all';
       this.elementService
         .getAllElements()
+        .subscribe((data) => {
+          this.elementi = data;
+          this.dataSource = new MatTableDataSource(data);
+          this.ngAfterViewInit();
+        });
+    }
+
+    getMyElem() {
+      this.currentElement = 'mine';
+      this.elementService
+        .getAllElementsForUser(this.authService.currentUser.email)
         .subscribe((data) => {
           this.elementi = data;
           this.dataSource = new MatTableDataSource(data);

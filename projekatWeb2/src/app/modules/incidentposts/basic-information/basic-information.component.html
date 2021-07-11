@@ -2,16 +2,15 @@
     <div class="row">
       <div class="col input-group mb-3"  >
         <span class="input-group-text">Type:</span>
-        <select class="form-select" [(ngModel)]="incident.Type">
-          <option value="planned_work" selected>Planned Work</option>
-          <option value="not_a_planned_work" selected>Not a Planned Work</option>
-        
-        </select> 
+        <select class="form-select" [(ngModel)]="incident.type">
+          <option value="planned_work" selected>Planned work</option>
+          <option value="unplanned_work">Unplanned work</option>
+        </select>
       </div>
     
       <div class="col input-group mb-3">
         <span class="input-group-text">Outage time:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.OutageTime" />
+        <input type="date" class="form-control" [(ngModel)]="incident.outageTime" />
       </div>
     
     </div>
@@ -20,7 +19,7 @@
     <div class="row">
       <div class="col input-group mb-3"  >
         <span class="input-group-text">Priority:</span>
-        <select class="form-select" [(ngModel)]="incident.Priority">
+        <select class="form-select" [(ngModel)]="incident.priority">
           <option value="incident1" selected> 1</option>
           <option value="incident2"> 2</option>
           <option value="incident2"> 3</option>
@@ -28,7 +27,7 @@
       </div>
       <div class="col input-group mb-3">
         <span class="input-group-text">ETR:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.ETR" />
+        <input type="date" class="form-control" [(ngModel)]="incident.etr" />
       </div>
     </div>
     
@@ -36,7 +35,7 @@
     <div class="row">
       <div class="col input-group mb-3">
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="incident.Confirmed" >
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="incident.confirmed" >
           <label class="form-check-label" for="flexSwitchCheckDefault">Confirmed:</label>
         </div>
       </div>
@@ -44,7 +43,7 @@
     
       <div class="col input-group mb-3">
         <span class="input-group-text">Calls:</span>
-        <input type="number" class="form-control"  [(ngModel)]="incident.Calls" />
+        <input type="number" class="form-control"  [(ngModel)]="incident.calls" />
       </div>
     </div>
     
@@ -52,12 +51,12 @@
     <div class="row">
       <div class="col input-group mb-3">
         <span class="input-group-text">Status:</span>
-        <input type="text" class="form-control" [(ngModel)]="incident.Status" />
+        <input type="text" disabled class="form-control" [(ngModel)]="incident.status"/>
       </div>
     
        <div class="col input-group mb-3">
         <span class="input-group-text">Voltage[kV]:</span>
-        <input type="text" class="form-control" [(ngModel)]="incident.Voltage" />
+        <input type="text" class="form-control" [(ngModel)]="incident.voltage" />
       </div>
     </div>
     
@@ -65,7 +64,7 @@
     <div class="row">
       <div class="col input-group mb-3">
         <span class="input-group-text">Description:</span>
-        <input type="text" class="form-control" [(ngModel)]="incident.Description"  />
+        <input type="text" class="form-control" [(ngModel)]="incident.description"  />
       </div>
     </div>
     
@@ -73,24 +72,24 @@
     <div class="row">
       <div class="col input-group mb-3">
         <span class="input-group-text">ETA:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.ETA" />
+        <input type="date" class="form-control" [(ngModel)]="incident.eta" />
       </div>
     
       <div class="col input-group mb-3">
         <span class="input-group-text">Scheduled time:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.ScheduledTime"  />
+        <input type="date" class="form-control" [(ngModel)]="incident.scheduledTime"  />
       </div>
     </div>
     
     <div class="row">
       <div class="col input-group mb-3">
         <span class="input-group-text">ATA:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.ATA" />
+        <input type="date" class="form-control" [(ngModel)]="incident.ata" />
       </div>
     
       <div class="col input-group mb-3">
         <span class="input-group-text">Affected customers:</span>
-        <input type="number" class="form-control" [(ngModel)]="incident.AffectedCustommers" />
+        <input type="number" class="form-control" [(ngModel)]="incident.affectedCustommers"   />
         
       </div>
     </div>

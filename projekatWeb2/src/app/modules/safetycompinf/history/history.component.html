@@ -1,1 +1,47 @@
-<p>history works!</p>
+<h2 class="text-center">Changes History List</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Date</th>
+    <th scope="col">Changed by</th>
+    <th scope="col">Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let change of changes; let i = index">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ change.date | date: 'mediumDate' }}</td>
+    <td>{{ change.user }}</td>
+    <td>{{ change.status }}</td>
+  </tr>
+  </tbody>
+</table>
+<h3>Current Status: <strong>{{document.status}}</strong></h3>
+<button
+  *ngIf="document.status === 'DRAFT' || document.status === 'ISSUE'"
+  style="margin-right: 20px"
+  type="button"
+  class="btn btn-success"
+  (click)="changeStatus('APPROVED')"
+>
+  Approve
+</button>
+<button
+  *ngIf="document.status === 'DRAFT'"
+  style="margin-right: 20px"
+  type="button"
+  class="btn btn-danger"
+  (click)="changeStatus('ISSUE')"
+>
+  Issue
+</button>
+<button
+  *ngIf="document.status === 'DRAFT' || document.status === 'ISSUE'"
+  type="button"
+  class="btn btn-secondary"
+  (click)="changeStatus('CANCELED')"
+>
+  Cancel
+</button>
+

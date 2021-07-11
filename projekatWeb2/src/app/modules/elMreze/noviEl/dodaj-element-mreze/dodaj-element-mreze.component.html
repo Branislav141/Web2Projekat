@@ -1,10 +1,10 @@
-<div class="container">
+<div style="background-color: greenyellow;" class="container">
 
-<h1 >Add new element</h1>
+<h1 style="text-align: center;" >Add new element</h1>
     <div class="row">
       <div class="col input-group mb-3"  >
         <span class="input-group-text">Type:</span>
-        <select class="form-select" [(ngModel)]="element.Type">
+        <select class="form-select" [(ngModel)]="element.type">
           <option value="Prekidac" selected>Prekidac</option>
           <option value="Osigurac" selected>Osigurac</option>
           <option value="Transformator" selected>Transformator</option>
@@ -16,7 +16,7 @@
       
       <div class="col input-group mb-3">
         <span class="input-group-text">Name:</span>
-        <input type="text" class="form-control" [(ngModel)]="element.Name" />
+        <input type="text" class="form-control" [(ngModel)]="element.name" />
       </div>
      
 
@@ -25,14 +25,19 @@
     <div class="row">
         <div class="col input-group mb-3">
           <span class="input-group-text">Adress:</span>
-          <input type="text" class="form-control" [(ngModel)]="element.Adress" />
+          <input type="text" class="form-control" [(ngModel)]="element.adress" />
         </div>
       
          <div class="col input-group mb-3">
           <span class="input-group-text">Coordinats:</span>
-          <input type="text" class="form-control"  [(ngModel)]="element.Coordinates"/>
+          <input type="text" class="form-control"  [(ngModel)]="element.coordinates"/>
         </div>
       </div>
-    <button (click)="addElement()"  ><mat-icon >save</mat-icon> </button>
+
+     
+    <div class="text-center">
+      <button mat-raised-button color="primary" style="width: 100px;" (click)="addElement()"  ><mat-icon >save</mat-icon> </button>
+      <button mat-raised-button color="primary" style="width: 100px;"   routerLink="/default/elementiMreze"  ><mat-icon >cancel</mat-icon> </button>
+      </div>
     
 </div>

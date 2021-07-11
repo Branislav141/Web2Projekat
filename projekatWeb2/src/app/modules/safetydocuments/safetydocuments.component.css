@@ -16,4 +16,9 @@ td, th {
   width: 25%;
 }
 
+.mat-header-cell {
+  background: green
+}
+
+
 

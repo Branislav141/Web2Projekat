@@ -23,7 +23,8 @@ namespace Backend.Migrations.Data
                     Type = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Adress = table.Column<string>(nullable: true),
-                    Coordinates = table.Column<string>(nullable: true)
+                    Coordinates = table.Column<string>(nullable: true),
+                    UserCreated = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

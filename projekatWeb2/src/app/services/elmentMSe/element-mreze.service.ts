@@ -23,6 +23,10 @@ export class ElementMrezeService {
     return this.httpClient.post(this.baseUrl, element);
   }
 
+  getAllElementsForUser(email: string) {
+    return this.httpClient.get<ElementMreze[]>(this.baseUrl + 'my/' + email);
+  }
+
 
 
 }

@@ -7,7 +7,7 @@ namespace Backend.Dtos
 {
     public class IncidentsToAdd
     {
-        public int id { get; set; }
+       
         public string Type { get; set; }
         public string Priority { get; set; }
         public bool Confirmed { get; set; }

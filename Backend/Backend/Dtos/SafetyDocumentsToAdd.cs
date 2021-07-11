@@ -10,7 +10,7 @@ namespace Backend.Dtos
        
         public string Type { get; set; }
         public string Plan { get; set; }
-        public string Status { get; set; }
+      
         public string CreatedBy { get; set; }
         public string FiledCrew { get; set; }
         public string Details { get; set; }

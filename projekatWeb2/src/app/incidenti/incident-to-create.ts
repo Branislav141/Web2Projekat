@@ -1,36 +1,37 @@
 export class IncidentToCreate {
-    id: number;
-    Type: string;
-    Priority:string;
-    Confirmed:boolean;
-    Status:string;
-    ETA:Date;
-    Description:string;
-    ATA:Date;
-    OutageTime:Date;
-    ETR:Date;
-    AffectedCustommers:number;
-    Calls:number;
-    Voltage:string;
-    ScheduledTime:Date;
-    userCreated:string;
+    
+  
+  type: string;
+  priority:string;
+  confirmed:boolean;
+
+  eta:Date;
+  description:string;
+  ata:Date;
+  outageTime:Date;
+  etr:Date;
+  affectedCustommers:number;
+  calls:number;
+  voltage:string;
+  scheduledTime:Date;
+  userCreated: string;
   
   
     constructor() {
-      this.id = 0;
-      this.Type = '';
-      this.Priority='';
-      this.Confirmed=false;
-      this.Status='';
-      this.ETA=new Date();
-      this.Description='';
-      this.ATA=new Date();
-      this.OutageTime=new Date();
-      this.ETR=new Date();
-      this.AffectedCustommers=0;
-      this.Calls=0;
-      this.Voltage='';
-      this.ScheduledTime=new Date();
+      
+      this.type = '';
+      this.priority='';
+      this.confirmed=false;
+     
+      this.eta=new Date();
+      this.description='';
+      this.ata=new Date();
+      this.outageTime=new Date();
+      this.etr=new Date();
+      this.affectedCustommers=0;
+      this.calls=0;
+      this.voltage='';
+      this.scheduledTime=new Date();
       this.userCreated = '';
   
     

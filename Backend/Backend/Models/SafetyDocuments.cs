@@ -9,7 +9,7 @@ namespace Backend.Models
 {
     public class SafetyDocuments
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int Id { get; set; }
         public string Type { get; set; }
         public string Plan { get; set; }
@@ -20,5 +20,7 @@ namespace Backend.Models
         public string Notes { get; set; }
         public string PhoneNo { get; set; }
         public DateTime CreationDate { get; set; }
+
+        public List<ChangeDoc> ChangeHistoryDoc { get; set; }
     }
 }

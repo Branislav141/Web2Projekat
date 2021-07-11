@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col input-group mb-3">
     <span class="input-group-text">Type:</span>
-    <select class="form-select" [(ngModel)]="document.Type">
+    <select class="form-select" [(ngModel)]="document.type">
       <option value="planned_work" selected>Planned work</option>
       <option value="unplanned_work">Unplanned work</option>
     </select>
@@ -9,19 +9,21 @@
 
   <div class="col input-group mb-3">
     <span class="input-group-text">Plan rada:</span>
-    <input type="text" class="form-control" [(ngModel)]="document.Plan" value="{{document.Plan}}" />
+    <input type="text" class="form-control" [(ngModel)]="document.plan" />
   </div>
 </div>
 
 <div class="row">
-  <div class="col input-group mb-3">
-    <span class="input-group-text">Status:</span>
-    <span class="form-control">Draft</span>
+  <div class="row">
+    <div class="col input-group mb-3">
+      <span class="input-group-text">Status:</span>
+      <input type="text" disabled class="form-control" [(ngModel)]="document.status"/>
+    </div>
   </div>
 
   <div class="col input-group mb-3">
     <span class="input-group-text">CreatedBy:</span>
-    <input type="text" disabled class="form-control" [(ngModel)]="document.CreatedBy" />
+    <input type="text" disabled class="form-control" [(ngModel)]="document.createdBy" />
 </div>
 
 
@@ -31,13 +33,13 @@
      
   <div class="col input-group mb-3">
     <span class="input-group-text">Crew:</span>
-    <input type="text" class="form-control" [(ngModel)]="document.FiledCrew"  />
+    <input type="text" class="form-control" [(ngModel)]="document.filedCrew"  />
   </div>
 
 
 <div class="col input-group mb-3">
   <span class="input-group-text">Details:</span>
-  <input type="text" class="form-control" [(ngModel)]="document.Details"  />
+  <input type="text" class="form-control" [(ngModel)]="document.details"  />
 </div>
 </div>
 
@@ -47,13 +49,13 @@
  
   <div class="col input-group mb-3">
     <span class="input-group-text">Notes:</span>
-    <input type="text" class="form-control" [(ngModel)]="document.Notes"  />
+    <input type="text" class="form-control" [(ngModel)]="document.notes"  />
   </div>
 
 
 <div class="col input-group mb-3">
   <span class="input-group-text">PhoneNo:</span>
-  <input type="text" class="form-control" [(ngModel)]="document.PhoneNo" />
+  <input type="text" class="form-control" [(ngModel)]="document.phoneNo" />
 </div>
 </div>
 
@@ -61,7 +63,7 @@
  
   <div class="col input-group mb-3">
     <span class="input-group-text">CreationDate:</span>
-    <input type="date" class="form-control" [(ngModel)]="document.CreationDate"/>
+    <input type="date" class="form-control" [(ngModel)]="document.creationDate"/>
   </div>
 
 

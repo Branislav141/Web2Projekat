@@ -1,25 +1,25 @@
 export class SafetyDocuments {
     id:number;
-    Type:string;
-    Plan:string;
-    Status:string;
-    CreatedBy:string;
-    FiledCrew:string;
-    Details:string;
-    Notes:string;
-    PhoneNo:string;
-    CreationDate:Date;
+    type:string;
+    plan:string;
+    status:string;
+    createdBy:string;
+    filedCrew:string;
+    details:string;
+    notes:string;
+    phoneNo:string;
+    creationDate:Date;
 
     constructor(){
         this.id=0;
-        this.Type='';
-        this.Plan='';
-        this.Status='Draft';
-        this.CreatedBy='';
-        this.FiledCrew='';
-        this.Details='';
-        this.Notes='';
-        this.PhoneNo='';
-        this.CreationDate=new Date();
+        this.type='';
+        this.plan='';
+        this.status='Draft';
+        this.createdBy='';
+        this.filedCrew='';
+        this.details='';
+        this.notes='';
+        this.phoneNo='';
+        this.creationDate=new Date();
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Backend.Data;
 using Backend.Dtos;
 using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,7 @@ namespace Backend.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class SafetyDocumentsController : ControllerBase
     {
 
@@ -49,19 +52,48 @@ namespace Backend.Controllers
 
             document.Type = SftDAdd.Type;
             document.Plan = SftDAdd.Plan;
-            document.Status = SftDAdd.Status;
+            document.Status = "DRAFT";
             document.CreatedBy = SftDAdd.CreatedBy;
             document.FiledCrew = SftDAdd.FiledCrew;
             document.Details = SftDAdd.Details;
             document.Notes = SftDAdd.Notes;
             document.PhoneNo = SftDAdd.PhoneNo;
             document.CreationDate = SftDAdd.CreationDate;
+            document.ChangeHistoryDoc = new List<ChangeDoc>();
 
-         
 
 
 
             _dbContext.SafetyDocuments.Add(document);
+            _dbContext.SaveChanges();
+
+            return Ok();
+        }
+
+        [HttpGet("history/{id}")]
+        public IActionResult GetDocHistory(int id)
+        {
+            List<ChangeDoc> changeHistoryDoc = _dbContext.SafetyDocuments.Include(c => c.ChangeHistoryDoc).Where(x => x.Id == id).FirstOrDefault().ChangeHistoryDoc;
+
+            return Ok(changeHistoryDoc);
+        }
+
+        [HttpPost("changeStatus")]
+        public IActionResult ChangeStatus([FromBody] StatusToChangeDoc statusToChange)
+        {
+            SafetyDocuments document = _dbContext.SafetyDocuments.Include(c => c.ChangeHistoryDoc).Where(x => x.Id == statusToChange.Id).FirstOrDefault();
+
+            document.Status = statusToChange.Status;
+
+            ChangeDoc change = new ChangeDoc();
+
+            change.Date = DateTime.Now;
+            change.Status = statusToChange.Status;
+            change.User = statusToChange.User;
+
+
+            document.ChangeHistoryDoc.Add(change);
+
             _dbContext.SaveChanges();
 
             return Ok();
@@ -74,7 +106,7 @@ namespace Backend.Controllers
 
             document.Type = docToModify.Type;
             document.Plan = docToModify.Plan;
-            document.Status = docToModify.Status;
+           
             document.CreatedBy = docToModify.CreatedBy;
             document.FiledCrew = docToModify.FiledCrew;
             document.Details = docToModify.Details;

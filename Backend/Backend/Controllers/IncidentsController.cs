@@ -1,6 +1,7 @@
 ﻿using Backend.Data;
 using Backend.Dtos;
 using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class IncidentsController : ControllerBase
     {
         
@@ -53,7 +55,7 @@ namespace Backend.Controllers
         {
             Incident incident = new Incident();
 
-            incident.id = incToAdd.id;
+           
             incident.Type = incToAdd.Type;
             incident.Priority = incToAdd.Priority;
             incident.Confirmed = incToAdd.Confirmed;

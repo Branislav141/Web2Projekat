@@ -15,5 +15,6 @@ namespace Backend.Models
         public string Name { get; set; }
         public string Adress { get; set; }
         public string Coordinates { get; set; }
+        public string UserCreated { get; set; }
     }
 }

@@ -1,9 +1,9 @@
 <div class="container">
-  <button type="button" class="btn btn-secondary" routerLink="/default/newsafetydoc">New</button>
-  <button type="button" [disabled]="currentDocument === 'mine'" class="btn btn-secondary"
+  <button mat-raised-button color="primary" type="button" class="btn btn-secondary" routerLink="/default/newsafetydoc">New</button>
+  <button mat-raised-button color="primary" type="button" [disabled]="currentDocument === 'mine'" class="btn btn-secondary"
           (click)="getMyDoc()" style="margin-left: 200px">Mine
   </button>
-  <button type="button" [disabled]="currentDocument === 'all'" class="btn btn-secondary"
+  <button mat-raised-button color="primary" type="button" [disabled]="currentDocument === 'all'" class="btn btn-secondary"
           (click)="getAllDoc()">All
   </button>
   <div class="card" style="margin-top: 20px">

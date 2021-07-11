@@ -12,7 +12,7 @@ import { ElementMrezeService } from 'src/app/services/elmentMSe/element-mreze.se
 })
 export class DodajElementMrezeComponent implements OnInit {
   element: ElementMrezeToAdd=new ElementMrezeToAdd();
- 
+  currentUser = '';
   constructor(
     private authService: AuthService,
     private activatedRoute: ActivatedRoute,
@@ -22,14 +22,14 @@ export class DodajElementMrezeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-   
+    this.currentUser = this.authService.getUserEmail();
   }
   
 
 
 
   addElement() {
-    
+    this.element.userCreated = this.authService.getUserEmail();
     this.elemService.createNewElement(this.element).subscribe(
       () => {
         this.tostr.success('Element created successfully!');

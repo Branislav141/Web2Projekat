@@ -12,8 +12,8 @@ import { IncidentService } from 'src/app/services/incservice/incident.service';
   styleUrls: ['./basic-information.component.css'],
 })
 export class BasicInformationComponent implements OnInit {
-  incident: IncidentToCreate=new IncidentToCreate();
-  currentUser = '';
+  incident: Incident=new Incident();
+  
   constructor(
     private authService: AuthService,
     private activatedRoute: ActivatedRoute,
@@ -25,6 +25,7 @@ export class BasicInformationComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((data) => {
       this.loadIncidents(data.id);
+      
     });
   }
   
@@ -34,6 +35,7 @@ export class BasicInformationComponent implements OnInit {
   loadIncidents(id: string) {
     this.incService.getIncidents(id).subscribe((data) => {
       this.incident = data;
+      console.log(this.incident);
     });
   }
 

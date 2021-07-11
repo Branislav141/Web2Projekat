@@ -33,6 +33,14 @@ namespace Backend.Controllers
             return Ok(inc);
         }
 
+        [HttpGet("my/{email}")]
+        public IActionResult GetAllElements(string email)
+        {
+            List<ElementMreze> elementMre = _dbContext.Elementi.Where(x => x.UserCreated == email).ToList();
+
+            return Ok(elementMre);
+        }
+
         [HttpPost]
         public IActionResult AddElement([FromBody] ElementsToAdd elmToAdd)
         {
@@ -43,6 +51,7 @@ namespace Backend.Controllers
             element.Name = elmToAdd.Name;
             element.Adress = elmToAdd.Adress;
             element.Coordinates = elmToAdd.Coordinates;
+            element.UserCreated = elmToAdd.UserCreated;
 
 
 

@@ -29,7 +29,7 @@ export class NewsafetydocumentComponent implements OnInit {
 
 
   addDocument() {
-    this.document.CreatedBy = this.authService.getUserEmail();
+    this.document.createdBy = this.authService.getUserEmail();
     this.documentService.createNewDocument(this.document).subscribe(
       () => {
         this.tostr.success('Document created successfully!');
