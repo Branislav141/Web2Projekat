@@ -16,3 +16,12 @@ C:\Users\BP doktor\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\
 C:\Users\BP doktor\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
 C:\Users\BP doktor\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
 C:\Users\BP doktor\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.AssemblyReference.cache
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\Branislav Perovic\Documents\GitHub\Web2Projekat\Backend\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb

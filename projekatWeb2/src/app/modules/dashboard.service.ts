@@ -14,7 +14,7 @@ export class DashboardService implements OnInit {
     return [
       {
         name: 'Planed',
-        data: [],
+        data: [122, 166, 200, 250, 290, 360, 3300],
       },
       {
         name: 'Un planed',

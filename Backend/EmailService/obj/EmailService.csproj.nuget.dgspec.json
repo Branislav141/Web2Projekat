@@ -1,30 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BP doktor\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj": {}
+    "C:\\Users\\Branislav Perovic\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BP doktor\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj": {
+    "C:\\Users\\Branislav Perovic\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BP doktor\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj",
+        "projectUniqueName": "C:\\Users\\Branislav Perovic\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj",
         "projectName": "EmailService",
-        "projectPath": "C:\\Users\\BP doktor\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj",
-        "packagesPath": "C:\\Users\\BP doktor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BP doktor\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\obj\\",
+        "projectPath": "C:\\Users\\Branislav Perovic\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\EmailService.csproj",
+        "packagesPath": "C:\\Users\\Branislav Perovic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Branislav Perovic\\Documents\\GitHub\\Web2Projekat\\Backend\\EmailService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\BP doktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Branislav Perovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft Azure Tools\\Visual Studio 12.0\\2.9\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft Azure Tools\\Visual Studio 14.0\\2.9\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft Azure Tools\\Visual Studio 15.0\\2.9\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },

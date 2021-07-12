@@ -59,7 +59,7 @@ namespace Backend.Controllers
             incident.Type = incToAdd.Type;
             incident.Priority = incToAdd.Priority;
             incident.Confirmed = incToAdd.Confirmed;
-            incident.Status = incToAdd.Status;
+            incident.Status = "DRAFT";
             incident.ETA = incToAdd.ETA;
             incident.Description = incToAdd.Description;
             incident.ATA = incToAdd.ATA;
