@@ -10,7 +10,9 @@
     
       <div class="col input-group mb-3">
         <span class="input-group-text">Outage time:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.outageTime" />
+        
+        <input type="date" class="form-control" [ngModel]="incident.outageTime | date:'yyyy-MM-dd'"
+        (ngModelChange)="incident.outageTime = $event"/>
       </div>
     
     </div>
@@ -27,7 +29,9 @@
       </div>
       <div class="col input-group mb-3">
         <span class="input-group-text">ETR:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.etr" />
+       
+        <input type="date" class="form-control" [ngModel]="incident.etr | date:'yyyy-MM-dd'"
+        (ngModelChange)="incident.etr = $event"/>
       </div>
     </div>
     
@@ -72,19 +76,24 @@
     <div class="row">
       <div class="col input-group mb-3">
         <span class="input-group-text">ETA:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.eta" />
+       
+        <input type="date" class="form-control" [ngModel]="incident.eta | date:'yyyy-MM-dd'"
+        (ngModelChange)="incident.eta = $event"/>
       </div>
     
       <div class="col input-group mb-3">
         <span class="input-group-text">Scheduled time:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.scheduledTime"  />
+         <input type="date" class="form-control" [ngModel]="incident.scheduledTime | date:'yyyy-MM-dd'"
+        (ngModelChange)="incident.scheduledTime = $event"/>
       </div>
     </div>
     
     <div class="row">
       <div class="col input-group mb-3">
         <span class="input-group-text">ATA:</span>
-        <input type="date" class="form-control" [(ngModel)]="incident.ata" />
+     
+        <input type="date" class="form-control" [ngModel]="incident.ata | date:'yyyy-MM-dd'"
+        (ngModelChange)="incident.ata = $event"/>
       </div>
     
       <div class="col input-group mb-3">

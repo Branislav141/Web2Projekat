@@ -63,7 +63,9 @@
  
   <div class="col input-group mb-3">
     <span class="input-group-text">CreationDate:</span>
-    <input type="date" class="form-control" [(ngModel)]="document.creationDate"/>
+    
+    <input type="date" class="form-control" [ngModel]="document.creationDate | date:'yyyy-MM-dd'"
+    (ngModelChange)="document.creationDate = $event"/>
   </div>
 
 
